@@ -2,6 +2,7 @@ import * as React from "react";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
+import Markdown from "../Markdown";
 
 export interface postObject {
   title: string;
@@ -30,12 +31,7 @@ export default function MainPostDetail(props: MainPostDetailProps) {
         {post.title}
       </Typography>
       <Divider />
-
-      <div
-        dangerouslySetInnerHTML={{
-          __html: `${post.body}`,
-        }}
-      />
+      <Markdown className="markdown">{post.body}</Markdown>
     </Grid>
   );
 }

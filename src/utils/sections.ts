@@ -1,12 +1,6 @@
 export const sections = [
-  { title: "Technology", url: "category/technology" },
-  { title: "Design", url: "category/design" },
-  { title: "Culture", url: "category/culture" },
-  { title: "Business", url: "category/business" },
-  { title: "Politics", url: "category/politics" },
-  { title: "Opinion", url: "category/opinion" },
-  { title: "Science", url: "category/science" },
-  { title: "Health", url: "category/health" },
-  { title: "Style", url: "category/style" },
-  { title: "Travel", url: "category/travel" },
+  { title: "React", url: "category/reactjs" },
+  { title: "Next.js", url: "category/nextjs" },
+  { title: "Excel - VBA", url: "category/vba" },
+  { title: "GAS - Google Apps Script", url: "category/gas-google-apps-engine" },
 ];

@@ -25,5 +25,5 @@ module.exports = {
    * https:my-domain-name.com/ → ×
    * https:my-domain-name.com/jamstackblog-with-next-muiv5-microcms → 〇
    */
-  basePath: "/jamstackblog-with-next-muiv5-microcms",
+  basePath: "/paths-are-tech-blog-template",
 };

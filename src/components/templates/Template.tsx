@@ -9,14 +9,14 @@ import Sidebar from "../organisms/Sidebar";
 import Footer from "../organisms/Footer";
 import { sidebar } from "../../utils/sidebar";
 import { sections } from "../../utils/sections";
-
 export default function Template(props: any) {
   const { mainFeaturedPost, featuredPosts } = props;
+
   return (
     <React.Fragment>
       <CssBaseline />
       <Container maxWidth="lg">
-        <Header title="Blog" sections={sections} />
+        <Header title="パスアの開発ブログ" sections={sections} />
         <main>
           {mainFeaturedPost !== undefined && mainFeaturedPost !== null ? (
             <MainFeaturedPost post={mainFeaturedPost} />

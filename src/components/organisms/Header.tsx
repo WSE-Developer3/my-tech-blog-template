@@ -49,7 +49,7 @@ export default function Header(props: HeaderProps) {
       <Toolbar
         component="nav"
         variant="dense"
-        sx={{ justifyContent: "space-between", overflowX: "auto" }}
+        sx={{ justifyContent: "left", overflowX: "auto" }}
       >
         {sections.map((section) => (
           <NextLink key={section.title} href={`/${section.url}`} passHref>
