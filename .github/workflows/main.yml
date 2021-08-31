@@ -37,5 +37,3 @@ jobs:
           echo "lss"
           ls 
           echo "$XSERVER_SSH_KEY"
-          echo ${{XSERVER_SSH_KEY}}
-          echo ${{env.XSERVER_SSH_KEY}}
