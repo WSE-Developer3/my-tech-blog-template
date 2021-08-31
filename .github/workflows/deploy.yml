@@ -25,5 +25,5 @@ jobs:
         # local-dir: ../../paths-are-tech-blog-template/
         local_dir: ${{ env.GITHUB_SERVER_URL }}/paths-are-tech-blog-template/
         # server-dir: ${{ REMOTE_DIR }}
-        server_dir: works.paths-are.com/paths-are-tech-blog-template/
+        remote_dir: works.paths-are.com/paths-are-tech-blog-template/
         # 'server', 'username', 'password', 'local-dir', 'server-dir', valid inputs are ['entryPoint', 'args', 'ftp_server', 'ftp_username', 'ftp_password', 'method', 'port', 'local_dir', 'remote_dir']
