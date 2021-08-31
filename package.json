@@ -9,14 +9,17 @@
     "@emotion/styled": "^11.3.0",
     "@material-ui/core": "^5.0.0-beta.4",
     "@material-ui/icons": "^5.0.0-beta.4",
+    "algoliasearch": "^4.10.5",
     "clsx": "latest",
     "copy-to-clipboard": "^3.3.1",
+    "instantsearch.css": "^7.4.5",
     "markdown-to-jsx": "^7.1.3",
     "microcms-js-sdk": "^1.2.0",
     "next": "latest",
     "raw-loader": "^4.0.2",
     "react": "latest",
     "react-dom": "latest",
+    "react-instantsearch-dom": "^6.12.1",
     "react-syntax-highlighter": "^15.4.4"
   },
   "scripts": {
@@ -29,13 +32,19 @@
     "local": "python -m http.server 8000",
     "start-static-html": "rm -r paths-are-tech-blog-template/ && mkdir paths-are-tech-blog-template && cp -r out/* paths-are-tech-blog-template/ && start http://localhost:8000/paths-are-tech-blog-template && npm run local",
     "deploy-to-xserver": "bash UPLOADFILES_TO_XSERVER.sh",
-    "deploy-to-xserver-comment": "Xサーバーへ静的htmlファイルをアップロードする"
+    "deploy-to-xserver-comment": "Xサーバーへ静的htmlファイルをアップロードする",
+    "algolia": "node --trace-warnings ./src/algolia/addRecode.js"
   },
   "devDependencies": {
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
+    "@types/react-instantsearch-dom": "^6.12.0",
     "@types/react-syntax-highlighter": "^13.5.2",
+    "css-loader": "^6.2.0",
+    "dotenv": "^10.0.0",
+    "node-fetch": "^2.6.1",
+    "style-loader": "^3.2.1",
     "typescript": "latest"
   }
 }

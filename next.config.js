@@ -26,4 +26,17 @@ module.exports = {
    * https:my-domain-name.com/jamstackblog-with-next-muiv5-microcms → 〇
    */
   basePath: "/paths-are-tech-blog-template",
+
+  /**
+   * algolia
+   * https://www.algolia.com/doc/guides/building-search-ui/widgets/customize-an-existing-widget/react/#style-your-widgets
+   */
+  module: {
+    loaders: [
+      {
+        test: /\.css$/,
+        loaders: ["style?insertAt=top", "css"],
+      },
+    ],
+  },
 };
