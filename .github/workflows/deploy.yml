@@ -11,13 +11,15 @@ jobs:
       - uses: actions/checkout@master
       - name: FTP-Deploy-Action
         uses: SamKirkland/FTP-Deploy-Action@2.0.0
+        with:
+          port: 10022
         env:
           FTP_SERVER: ${{ secrets.XSERVER_HOST_NAME }}
           FTP_USERNAME: ${{ secrets.XSERVER_USER_NAME }}
           FTP_PASSWORD: ${{ secrets.XSERVER_PASSWORD }}
           LOCAL_DIR: ./
           REMOTE_DIR: /home/xs282265/paths-are.com/public_html/works.paths-are.com/paths-are-tech-blog-template/
-          
+
 # on: push
 # name: 🚀 Deploy website on push
 # jobs:
