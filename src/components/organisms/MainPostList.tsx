@@ -18,7 +18,7 @@ export default function MainHome(props: MainHomeProps) {
   return (
     <Grid item xs={12} md={8}>
       <Typography variant="h6" gutterBottom>
-        {category && "[" + category + "]に関する"}
+        {category && "[" + category + "]に関する 変更した　8/31"}
         {title}
       </Typography>
       <Divider
