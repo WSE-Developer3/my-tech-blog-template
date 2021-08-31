@@ -37,16 +37,6 @@ jobs:
           HOST_NAME: ${{ secrets.XSERVER_HOST_NAME }}
           PORT: 10022
         run: |
-          # echo Add other actions to build,
-          # echo test, and deploy your project.
-          # echo "lss"
-          ls 
-          # echo "$XSERVER_SSH_KEY"
-          # echo $XSERVER_SSH_KEY
-          # echo ${USER_NAME}
-          # 定数定義
-          # PORT=10022 # ポート番号
-          # COPY_FROM=$SCRIPT_DIR/out/* # コピー対象ファイル
           COPY_FROM=./out/* # コピー対象ファイル
           REMOTE_ROOT_DIR=$USER_NAME@$HOST_NAME:/home/$USER_NAME/ #リモートパス
           PROJECT_DIR=paths-are.com/public_html/works.paths-are.com/paths-are-tech-blog-template/ # プロジェクトまでのパス
