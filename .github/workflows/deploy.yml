@@ -23,11 +23,12 @@ jobs:
       - name: Build Next.js app
         run: npm run build
         env:
-          #           URL_PREFIX: myapp
           API_KEY: 6a8ccad3-bfb4-4cbd-85b4-72baff4f550c
           SERVICE_ID: paths-are-template
           ALGOLIA_ADMIN_API_KEY: 587a2807c581950c42e5f5514368fb99
-      #           ALGOLIA_SEARCH_CLIENT: 3cdac3eb34cf5bf394e477e1584d8ef8
+
+      - name: Output static html files
+        run: npm run export
 
       - name: List directory
         run: ls
