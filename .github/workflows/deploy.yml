@@ -16,13 +16,13 @@ jobs:
 #           protocol: ftps
 #           port: 10022 # todo replace with your web hosts ftps port
         env:
-#           FTP_SERVER: ${{ secrets.XSERVER_HOST_NAME }}
-#           FTP_USERNAME: ${{ secrets.XSERVER_USER_NAME }}
-#           FTP_PASSWORD: ${{ secrets.XSERVER_PASSWORD }}
-          FTP_SERVER: sv10458.xserver.jp
-          FTP_USERNAME: xs282265
-          FTP_PASSWORD: GQu38sZ8XMntkVb
-          LOCAL_DIR: ./out
+          FTP_SERVER: ${{ secrets.XSERVER_HOST_NAME }}
+          FTP_USERNAME: ${{ secrets.XSERVER_USER_NAME }}
+          FTP_PASSWORD: ${{ secrets.XSERVER_PASSWORD }}
+#           FTP_SERVER: sv10458.xserver.jp
+#           FTP_USERNAME: xs282265
+#           FTP_PASSWORD: GQu38sZ8XMntkVb
+          LOCAL_DIR: ./out/
           # REMOTE_DIR: /home/xs282265/paths-are.com/public_html/works.paths-are.com/paths-are-tech-blog-template/
           REMOTE_DIR: /paths-are.com/public_html/works.paths-are.com/paths-are-tech-blog-template/
 
@@ -45,32 +45,3 @@ jobs:
 #       #   run: |
 #       #     npm install                     # npm install のコマンドを実行する
 #       #     npm run export   # npm run export のコマンドを実行する
-
-#       - name: 📂 Sync files
-#         uses: SamKirkland/FTP-Deploy-Action@2.0.0
-#         env: # FTP環境の設定を行う
-#           FTP_SERVER: ${{ secrets.XSERVER_HOST_NAME }} # FTPサーバーのURLを設定
-#           FTP_USERNAME: ${{ secrets.XSERVER_USER_NAME }} # FTPのユーザー名を設定
-#           FTP_PASSWORD: ${{ secrets.XSERVER_PASSWORD }} # FTPのパスワードを設定
-#           LOCAL_DIR: out # どのディレクトリのデータをアップロードするか
-#           REMOTE_DIR: works.paths-are.com/paths-are-tech-blog-template/ # リモートのどのディレクトリにアップロードするか
-#           PORT: 10022
-#           # ARGS: --delete
-#         # env:
-#         # LOCAL_DIR: ./paths-are-tech-blog-template/
-#         # REMOTE_DIR: works.paths-are.com/paths-are-tech-blog-template/
-#         # FTP_SERVER: ${{ secrets.XSERVER_HOST_NAME }}
-#         # FTP_USERNAME: ${{ secrets.XSERVER_USER_NAME }}
-#         # FTP_PASSWORD: ${{ secrets.XSERVER_PASSWORD }}
-#         with:
-#           ftp_server: ${{ secrets.XSERVER_HOST_NAME }}
-#           ftp_username: ${{ secrets.XSERVER_USER_NAME }}
-#           ftp_password: ${{ secrets.XSERVER_PASSWORD }}
-#           port: 10022
-#           # local-dir: ${{ LOCAL_DIR }}
-#           # local-dir: ../../paths-are-tech-blog-template/
-#           # local_dir: ${{ env.GITHUB_SERVER_URL }}/paths-are-tech-blog-template/
-#           local_dir: out/
-#           # server-dir: ${{ REMOTE_DIR }}
-#           remote_dir: works.paths-are.com/paths-are-tech-blog-template/
-#           # 'server', 'username', 'password', 'local-dir', 'server-dir', valid inputs are ['entryPoint', 'args', 'ftp_server', 'ftp_username', 'ftp_password', 'method', 'port', 'local_dir', 'remote_dir']
