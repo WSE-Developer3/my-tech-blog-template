@@ -23,9 +23,6 @@ jobs:
       - name: Build Next.js app
         run: npm run build
         env:
-          # MICROCMS_API_KEY: 6a8ccad3-bfb4-4cbd-85b4-72baff4f550c
-          # MICROCMS_SERVICE_ID: paths-are-template
-          # ALGOLIA_ADMIN_API_KEY: 587a2807c581950c42e5f5514368fb99
           MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY }}
           MICROCMS_SERVICE_ID: ${{ secrets.MICROCMS_SERVICE_ID }}
           ALGOLIA_ADMIN_API_KEY: ${{ secrets.ALGOLIA_ADMIN_API_KEY }}
@@ -36,9 +33,6 @@ jobs:
           MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY }}
           MICROCMS_SERVICE_ID: ${{ secrets.MICROCMS_SERVICE_ID }}
           ALGOLIA_ADMIN_API_KEY: ${{ secrets.ALGOLIA_ADMIN_API_KEY }}
-
-      - name: List directory
-        run: ls
 
       - name: FTP-Deploy-Action
         uses: SamKirkland/FTP-Deploy-Action@2.0.0
