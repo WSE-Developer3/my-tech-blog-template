@@ -22,6 +22,6 @@ jobs:
         password: ${{ secrets.XSERVER_PASSWORD }}
         # local-dir: ${{ LOCAL_DIR }}
         # local-dir: ../../paths-are-tech-blog-template/
-        local-dir: ${{ GITHUB_WORKSPACE }}/paths-are-tech-blog-template/
+        local-dir: ${{ env.GITHUB_WORKSPACE }}/paths-are-tech-blog-template/
         # server-dir: ${{ REMOTE_DIR }}
         server-dir: works.paths-are.com/paths-are-tech-blog-template/
