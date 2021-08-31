@@ -23,12 +23,12 @@ jobs:
       - name: Build Next.js app
         run: npm run build
         env:
-#           URL_PREFIX: myapp
+          #           URL_PREFIX: myapp
           API_KEY: 6a8ccad3-bfb4-4cbd-85b4-72baff4f550c
           SERVICE_ID: paths-are-template
           ALGOLIA_ADMIN_API_KEY: 587a2807c581950c42e5f5514368fb99
-#           ALGOLIA_SEARCH_CLIENT: 3cdac3eb34cf5bf394e477e1584d8ef8
-      
+      #           ALGOLIA_SEARCH_CLIENT: 3cdac3eb34cf5bf394e477e1584d8ef8
+
       - name: FTP-Deploy-Action
         uses: SamKirkland/FTP-Deploy-Action@2.0.0
         env:
@@ -39,6 +39,8 @@ jobs:
           # REMOTE_DIR: /home/xs282265/paths-are.com/public_html/works.paths-are.com/paths-are-tech-blog-template/
           REMOTE_DIR: /paths-are.com/public_html/works.paths-are.com/paths-are-tech-blog-template/
 
+      - name: List directory
+        run: ls
 # on: push
 # name: 🚀 Deploy website on push
 # jobs:
