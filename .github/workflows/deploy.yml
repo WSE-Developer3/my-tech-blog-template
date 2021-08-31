@@ -10,7 +10,7 @@ jobs:
       
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@2.0.0
-      env:
+      # env:
         # LOCAL_DIR: ./paths-are-tech-blog-template/
         # REMOTE_DIR: works.paths-are.com/paths-are-tech-blog-template/
         # FTP_SERVER: ${{ secrets.XSERVER_HOST_NAME }}
