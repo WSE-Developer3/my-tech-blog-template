@@ -1,0 +1,20 @@
+on:
+  push:https://github.com/WSE-Developer3/my-tech-blog-template
+    branches:
+      - master
+name: Deploy
+jobs:
+  FTP-Deploy-Action:
+    name: FTP-Deploy-Action
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      
+      - name: FTP-Deploy-Action
+        uses: SamKirkland/FTP-Deploy-Action@2.0.0
+        with:
+          server: ${{ secrets.XSERVER_HOST_NAME }}
+          username: ${{ secrets.XSERVER_USER_NAME }}
+          password: ${{ secrets.XSERVER_PASSWORD }}
+          local-dir:./paths-are-tech-blog-template/
+          server-dir:works.paths-are.com/paths-are-tech-blog-template/
