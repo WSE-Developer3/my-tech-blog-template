@@ -20,7 +20,7 @@ jobs:
 
         
     - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@2.0.0行
+      uses: SamKirkland/FTP-Deploy-Action@2.0.0
       env:                                        # FTP環境の設定を行う
         FTP_SERVER: ${{ secrets.XSERVER_HOST_NAME }}     # FTPサーバーのURLを設定
         FTP_USERNAME: ${{ secrets.XSERVER_USER_NAME }} # FTPのユーザー名を設定
