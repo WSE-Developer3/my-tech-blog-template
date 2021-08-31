@@ -34,7 +34,7 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-          echo "ls"
+          echo "lss"
           ls 
           echo "$XSERVER_SSH_KEY"
           echo ${{XSERVER_SSH_KEY}}
