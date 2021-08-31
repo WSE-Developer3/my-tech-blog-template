@@ -1,11 +1,11 @@
 import * as React from "react";
 import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
-import SearchIcon from "@material-ui/icons/Search";
+// import SearchIcon from "@material-ui/icons/Search";
 import Typography from "@material-ui/core/Typography";
 import MuiLink from "@material-ui/core/Link";
 import NextLink from "next/link";
-import Search from "../Search";
+// import Search from "../Search";
 
 // const algoliasearch = require("algoliasearch");
 
@@ -16,15 +16,15 @@ import algoliasearch from "algoliasearch/lite";
 import {
   InstantSearch,
   SearchBox,
-  Hits,
+  // Hits,
   Highlight,
   connectHits,
 } from "react-instantsearch-dom";
 
-const searchClient2 = algoliasearch(
-  "latency",
-  "6be0576ff61c053d5f9a3225e2a90f76"
-);
+// const searchClient2 = algoliasearch(
+//   "latency",
+//   "6be0576ff61c053d5f9a3225e2a90f76"
+// );
 const searchClient = algoliasearch(
   "IJHEWO1FRR",
   "3cdac3eb34cf5bf394e477e1584d8ef8"
@@ -86,9 +86,9 @@ export default function Header(props: HeaderProps) {
   const { sections, title } = props;
   const [searchQuery, setSearchQuery] = React.useState("");
 
-  const resultsState = {
-    // Object created on the server with `findResultsState`
-  };
+  // const resultsState = {
+  //   // Object created on the server with `findResultsState`
+  // };
   return (
     <React.Fragment>
       <Toolbar sx={{ borderBottom: 1, borderColor: "divider" }}>

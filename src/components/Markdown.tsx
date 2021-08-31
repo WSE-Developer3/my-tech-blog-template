@@ -32,6 +32,7 @@ function CodeHighlighter(props: any) {
     reason?: string
   ) => {
     if (reason === "clickaway") {
+      console.log(event);
       return;
     }
 
