@@ -26,6 +26,7 @@ jobs:
           FTP_PASSWORD: ${{ secrets.XSERVER_PASSWORD }} # FTPのパスワードを設定
           LOCAL_DIR: out # どのディレクトリのデータをアップロードするか
           REMOTE_DIR: works.paths-are.com/paths-are-tech-blog-template/ # リモートのどのディレクトリにアップロードするか
+          PORT: 10022
           # ARGS: --delete
         # env:
         # LOCAL_DIR: ./paths-are-tech-blog-template/
