@@ -13,6 +13,7 @@ jobs:
       env:
         LOCAL_DIR: ./paths-are-tech-blog-template/
         REMOTE_DIR: works.paths-are.com/paths-are-tech-blog-template/
+        FTP_SERVER: ${{ secrets.XSERVER_HOST_NAME }}
       with:
         server: ${{ secrets.XSERVER_HOST_NAME }}
         username: ${{ secrets.XSERVER_USER_NAME }}
