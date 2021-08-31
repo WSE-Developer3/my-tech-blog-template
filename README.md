@@ -1,4 +1,4 @@
-# Next.js と microCMS で作る Jamstack な技術ブログ
+# Next.js と microCMS で作る Jamstack な技術ブログのテンプレート
 
 microCMS と Next.js を使い Jamstack なブログを作成するためのフロントエンドのソースコードになります。  
 バックエンドは microCMS でご自身で構築さい。 [構築参考 URL](https://paths-are.com/archives/1961)
@@ -23,16 +23,18 @@ Algolia の設定も必要になります。
 
 - 検索機能
 
-  - algolia を使い検索
-  - 検索フォームにカーソルが当たったら、記事一覧を表示
+  - 入力されている値に対して algolia を使い検索
+  - 検索フォームにカーソルが当たったら、記事一覧を表示（今後）
 
 - シンタックスハイライター
 
   - コピーボタンの設置
   - ダークモード ON・OFF 機能
 
-- 記事のシェアボタンの設置
-- プレビュー画面の設置
+- 記事のシェアボタンの設置（今後）
+- プレビュー画面の設置（今後）
+- Google Analitics 設置（今後）
+- 広告の設置？（今後）
 
 ## 完成サイト
 
@@ -96,6 +98,12 @@ github actions にて
     FTP_USERNAME: ${{ secrets.XSERVER_USER_NAME }}
     FTP_PASSWORD: ${{ secrets.XSERVER_PASSWORD }}
     REMOTE_DIR: directory
+```
+
+## algolia のインデックス更新コマンド
+
+```shell
+npm run algolia # 理想はmicrocmsのwebhookを使って更新すること
 ```
 
 <!-- ・静的ファイル配信ホスティングサービスをご利用の場合は

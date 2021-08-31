@@ -81,71 +81,133 @@ function CodeHighlighter(props: any) {
             style={{
               position: "relative",
               marginTop: fileName.length > 0 ? 28 : 0,
+              boxShadow:
+                codeStyle === "dark"
+                  ? "0px 0px 0px -0px rgb(0 0 0 / 0%)"
+                  : "0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%)",
             }}
           >
-            {fileName.length > 0 && (
+            {fileName.length > 0 ? (
               <Box
                 sx={{
-                  position: "absolute",
-                  left: -4,
-                  top: -15,
-                  zIndex: 1,
-                  color: codeStyle === "dark" ? "#FFF" : "#000",
+                  height: 18,
                   backgroundColor:
-                    codeStyle === "dark" ? "rgb(40, 40, 40)" : "#FFF",
-                  padding: "2px 8px",
-                  borderRadius: 1,
-                  boxShadow: 1,
+                    codeStyle === "dark"
+                      ? "rgb(47, 47, 47)"
+                      : "rgb(250, 250, 250)",
+                  bottom: "-0.5rem",
+                  position: "relative",
                 }}
               >
-                {fileName}
-              </Box>
-            )}
-            <div
-              style={{
-                position: "absolute",
-                right: 5,
-                top: 5,
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                zIndex: 1,
-              }}
-            >
-              <Tooltip title="テーマ変更" placement="top">
-                <IconButton>
-                  <Brightness4Icon
-                    fontSize="small"
-                    sx={{
-                      color: codeStyle === "dark" ? "#FFF" : "#000",
-                    }}
-                    onClick={updateCodeStyle}
-                  />
-                </IconButton>
-              </Tooltip>
+                <Box
+                  sx={{
+                    position: "absolute",
+                    left: 10,
+                    top: -8,
+                    zIndex: 1,
+                    color: codeStyle === "dark" ? "#FFF" : "#000",
+                    backgroundColor:
+                      codeStyle === "dark" ? "rgb(60, 60, 60)" : "#FFF",
+                    padding: "2px 8px",
+                    // borderRadius: 1,
+                    boxShadow: 1,
+                  }}
+                >
+                  {fileName}
+                </Box>
+                <div
+                  style={{
+                    position: "absolute",
+                    right: 5,
+                    top: 5,
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    zIndex: 1,
+                  }}
+                >
+                  <Tooltip title="テーマ変更" placement="top">
+                    <IconButton>
+                      <Brightness4Icon
+                        fontSize="small"
+                        sx={{
+                          color: codeStyle === "dark" ? "#FFF" : "#000",
+                        }}
+                        onClick={updateCodeStyle}
+                      />
+                    </IconButton>
+                  </Tooltip>
 
-              <Tooltip title="コードをコピー" placement="top">
-                <IconButton>
-                  <ContentCopyIcon
-                    fontSize="small"
-                    sx={{
-                      color: codeStyle === "dark" ? "#FFF" : "#000",
-                    }}
-                    onClick={() => {
-                      copy(props.children);
-                      setMessageOpen(true);
-                    }}
+                  <Tooltip title="コードをコピー" placement="top">
+                    <IconButton>
+                      <ContentCopyIcon
+                        fontSize="small"
+                        sx={{
+                          color: codeStyle === "dark" ? "#FFF" : "#000",
+                        }}
+                        onClick={() => {
+                          copy(props.children);
+                          setMessageOpen(true);
+                        }}
+                      />
+                    </IconButton>
+                  </Tooltip>
+                  <Snackbar
+                    open={messageOpen}
+                    autoHideDuration={3000}
+                    onClose={handleClose}
+                    message="クリップボードにコピーしました。"
+                    action={action}
                   />
-                </IconButton>
-              </Tooltip>
-              <Snackbar
-                open={messageOpen}
-                autoHideDuration={3000}
-                onClose={handleClose}
-                message="クリップボードにコピーしました。"
-                action={action}
-              />
-            </div>
+                </div>
+              </Box>
+            ) : (
+              <div
+                style={{
+                  position: "absolute",
+                  right: 5,
+                  top: 5,
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  zIndex: 1,
+                }}
+              >
+                <Tooltip title="テーマ変更" placement="top">
+                  <IconButton>
+                    <Brightness4Icon
+                      fontSize="small"
+                      sx={{
+                        color: codeStyle === "dark" ? "#FFF" : "#000",
+                      }}
+                      onClick={updateCodeStyle}
+                    />
+                  </IconButton>
+                </Tooltip>
+
+                <Tooltip title="コードをコピー" placement="top">
+                  <IconButton>
+                    <ContentCopyIcon
+                      fontSize="small"
+                      sx={{
+                        color: codeStyle === "dark" ? "#FFF" : "#000",
+                      }}
+                      onClick={() => {
+                        copy(props.children);
+                        setMessageOpen(true);
+                      }}
+                    />
+                  </IconButton>
+                </Tooltip>
+                <Snackbar
+                  open={messageOpen}
+                  autoHideDuration={3000}
+                  onClose={handleClose}
+                  message="クリップボードにコピーしました。"
+                  action={action}
+                />
+              </div>
+            )}
             <SyntaxHighlighter
               style={codeStyle === "dark" ? materialDark : materialLight}
               language={language}
