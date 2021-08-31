@@ -12,7 +12,9 @@ jobs:
       - name: FTP-Deploy-Action
         uses: SamKirkland/FTP-Deploy-Action@2.0.0
         with:
-          port: 10022
+#           port: 10022
+          protocol: ftps
+          port: 10022 # todo replace with your web hosts ftps port
         env:
           FTP_SERVER: ${{ secrets.XSERVER_HOST_NAME }}
           FTP_USERNAME: ${{ secrets.XSERVER_USER_NAME }}
