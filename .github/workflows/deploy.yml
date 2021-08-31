@@ -29,6 +29,10 @@ jobs:
 
       - name: Output static html files
         run: npm run export
+        env:
+          API_KEY: 6a8ccad3-bfb4-4cbd-85b4-72baff4f550c
+          SERVICE_ID: paths-are-template
+          ALGOLIA_ADMIN_API_KEY: 587a2807c581950c42e5f5514368fb99
 
       - name: List directory
         run: ls
