@@ -20,6 +20,6 @@ yarn-error.log*
 
 UPLOADFILES_TO_XSERVER.sh
 
-/out
+# /out
 /jamstackblog-with-next-muiv5-microcms
 /paths-are-tech-blog-template
