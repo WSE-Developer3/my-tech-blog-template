@@ -7,6 +7,8 @@ import NextLink from "next/link";
 import algoliasearch from "algoliasearch/lite";
 import { InstantSearch, SearchBox, connectHits } from "react-instantsearch-dom";
 
+// const CLIENT: string = process.env.ALGOLIA_SEARCH_CLIENT;
+
 const searchClient = algoliasearch(
   "IJHEWO1FRR",
   "3cdac3eb34cf5bf394e477e1584d8ef8"
