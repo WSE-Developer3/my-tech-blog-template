@@ -5,12 +5,7 @@ import Typography from "@material-ui/core/Typography";
 import MuiLink from "@material-ui/core/Link";
 import NextLink from "next/link";
 import algoliasearch from "algoliasearch/lite";
-import {
-  InstantSearch,
-  SearchBox,
-  Highlight,
-  connectHits,
-} from "react-instantsearch-dom";
+import { InstantSearch, SearchBox, connectHits } from "react-instantsearch-dom";
 
 const searchClient = algoliasearch(
   "IJHEWO1FRR",
