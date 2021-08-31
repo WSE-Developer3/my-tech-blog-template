@@ -23,16 +23,19 @@ jobs:
       - name: Build Next.js app
         run: npm run build
         env:
-          API_KEY: 6a8ccad3-bfb4-4cbd-85b4-72baff4f550c
-          SERVICE_ID: paths-are-template
-          ALGOLIA_ADMIN_API_KEY: 587a2807c581950c42e5f5514368fb99
+          # MICROCMS_API_KEY: 6a8ccad3-bfb4-4cbd-85b4-72baff4f550c
+          # MICROCMS_SERVICE_ID: paths-are-template
+          # ALGOLIA_ADMIN_API_KEY: 587a2807c581950c42e5f5514368fb99
+          MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY }}
+          MICROCMS_SERVICE_ID: ${{ secrets.MICROCMS_SERVICE_ID }}
+          ALGOLIA_ADMIN_API_KEY: ${{ secrets.ALGOLIA_ADMIN_API_KEY }}
 
       - name: Output static html files
         run: npm run export
         env:
-          API_KEY: 6a8ccad3-bfb4-4cbd-85b4-72baff4f550c
-          SERVICE_ID: paths-are-template
-          ALGOLIA_ADMIN_API_KEY: 587a2807c581950c42e5f5514368fb99
+          MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY }}
+          MICROCMS_SERVICE_ID: ${{ secrets.MICROCMS_SERVICE_ID }}
+          ALGOLIA_ADMIN_API_KEY: ${{ secrets.ALGOLIA_ADMIN_API_KEY }}
 
       - name: List directory
         run: ls
@@ -46,22 +49,3 @@ jobs:
           LOCAL_DIR: ./out/
           # REMOTE_DIR: /home/xs282265/paths-are.com/public_html/works.paths-are.com/paths-are-tech-blog-template/
           REMOTE_DIR: /paths-are.com/public_html/works.paths-are.com/paths-are-tech-blog-template/
-# on: push
-# name: 🚀 Deploy website on push
-# jobs:
-#   web-deploy:
-#     name: 🎉 Deploy
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: 🚚 Get latest code
-#         uses: actions/checkout@v2
-
-#       # - name: Use Node.js 12.13
-#       #   uses: actions/setup-node@v1 # Node.jsの環境をセットアップする
-#       #   with:
-#       #     node-version: "12.13" # v12.13のバージョンのNode環境を使用する
-
-#       # - name: Build Project
-#       #   run: |
-#       #     npm install                     # npm install のコマンドを実行する
-#       #     npm run export   # npm run export のコマンドを実行する

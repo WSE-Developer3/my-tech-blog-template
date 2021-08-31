@@ -42,7 +42,7 @@ const main = async () => {
     // "https://paths-are-template.microcms.io/api/v1/blog?fields=id&title",
     {
       headers: {
-        "X-API-KEY": process.env.API_KEY,
+        "X-API-KEY": process.env.MICROCMS_API_KEY,
       },
     }
   );
