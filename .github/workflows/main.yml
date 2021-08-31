@@ -36,7 +36,6 @@ jobs:
           echo test, and deploy your project.
           echo "ls"
           ls 
-          echo $XSERVER_SSH_KEY
           echo "$XSERVER_SSH_KEY"
           echo ${{XSERVER_SSH_KEY}}
           echo ${{env.XSERVER_SSH_KEY}}
