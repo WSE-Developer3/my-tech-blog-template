@@ -23,7 +23,8 @@ jobs:
           FTP_USERNAME: xs282265
           FTP_PASSWORD: GQu38sZ8XMntkVb
           LOCAL_DIR: ./out
-          REMOTE_DIR: /home/xs282265/paths-are.com/public_html/works.paths-are.com/paths-are-tech-blog-template/
+          # REMOTE_DIR: /home/xs282265/paths-are.com/public_html/works.paths-are.com/paths-are-tech-blog-template/
+          REMOTE_DIR: /paths-are.com/public_html/works.paths-are.com/paths-are-tech-blog-template/
 
 # on: push
 # name: 🚀 Deploy website on push
