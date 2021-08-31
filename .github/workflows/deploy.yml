@@ -8,8 +8,26 @@ jobs:
     - name: 🚚 Get latest code
       uses: actions/checkout@v2
       
+    - name: Use Node.js 12.13
+      uses: actions/setup-node@v1     # Node.jsの環境をセットアップする
+      with:
+        node-version: '12.13'         # v12.13のバージョンのNode環境を使用する
+
+    - name: Build Project
+      run: |
+        npm install                     # npm install のコマンドを実行する
+        npm run export   # npm run export のコマンドを実行する
+
+        
     - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@2.0.0
+      uses: SamKirkland/FTP-Deploy-Action@2.0.0行
+      env:                                        # FTP環境の設定を行う
+        FTP_SERVER: ${{ secrets.XSERVER_HOST_NAME }}     # FTPサーバーのURLを設定
+        FTP_USERNAME: ${{ secrets.XSERVER_USER_NAME }} # FTPのユーザー名を設定
+        FTP_PASSWORD: ${{ secrets.XSERVER_PASSWORD }} # FTPのパスワードを設定
+        LOCAL_DIR: out                           # どのディレクトリのデータをアップロードするか
+        REMOTE_DIR: works.paths-are.com/paths-are-tech-blog-template/       # リモートのどのディレクトリにアップロードするか
+        # ARGS: --delete
       # env:
         # LOCAL_DIR: ./paths-are-tech-blog-template/
         # REMOTE_DIR: works.paths-are.com/paths-are-tech-blog-template/
@@ -24,7 +42,7 @@ jobs:
         # local-dir: ${{ LOCAL_DIR }}
         # local-dir: ../../paths-are-tech-blog-template/
         # local_dir: ${{ env.GITHUB_SERVER_URL }}/paths-are-tech-blog-template/
-        local_dir: ./
+        local_dir: out/
         # server-dir: ${{ REMOTE_DIR }}
         remote_dir: works.paths-are.com/paths-are-tech-blog-template/
         # 'server', 'username', 'password', 'local-dir', 'server-dir', valid inputs are ['entryPoint', 'args', 'ftp_server', 'ftp_username', 'ftp_password', 'method', 'port', 'local_dir', 'remote_dir']
