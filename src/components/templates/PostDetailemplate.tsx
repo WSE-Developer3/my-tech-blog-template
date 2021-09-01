@@ -8,9 +8,10 @@ interface PostDetailemplateProps {
   categories: any;
 }
 
-export default function PostDetailemplate(props: PostDetailemplateProps) {
-  const { post, categories } = props;
-
+export default function PostDetailemplate({
+  post,
+  categories,
+}: PostDetailemplateProps) {
   return (
     <Template categories={categories}>
       <MainPostDetail post={post} />

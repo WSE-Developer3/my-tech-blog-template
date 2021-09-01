@@ -34,6 +34,7 @@ export const getStaticProps = async (context: any) => {
   const categoryList = responseCategoryList.contents.map((content: any) => {
     return { url: [content.id], title: content.category };
   });
+  console.log(categoryList);
 
   return {
     props: {
