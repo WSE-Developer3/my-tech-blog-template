@@ -10,10 +10,9 @@ export default function PostDetailPage() {
   });
   const [categoryList, setCategoryList] = useState([{ url: [""], title: "" }]);
 
-  // idが取得されてセットされたら処理される
   useEffect(() => {
     if (router.isReady) {
-      console.log(process.env.NEXT_PUBLIC_MICROCMS_API_KEY);
+      // console.log(process.env.NEXT_PUBLIC_MICROCMS_API_KEY);
       const { contentid, draftkey } = router.query;
       const main = async () => {
         /** プレビュー記事取得 */

@@ -26,6 +26,7 @@ jobs:
         run: npm run build
         env:
           MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY }}
+          NEXT_PUBLIC_MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY }} # プレビュー機能用
           MICROCMS_SERVICE_ID: ${{ secrets.MICROCMS_SERVICE_ID }}
           ALGOLIA_ADMIN_API_KEY: ${{ secrets.ALGOLIA_ADMIN_API_KEY }}
 
@@ -33,6 +34,7 @@ jobs:
         run: npm run export
         env:
           MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY }}
+          NEXT_PUBLIC_MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY }} # プレビュー機能用
           MICROCMS_SERVICE_ID: ${{ secrets.MICROCMS_SERVICE_ID }}
           ALGOLIA_ADMIN_API_KEY: ${{ secrets.ALGOLIA_ADMIN_API_KEY }}
 
