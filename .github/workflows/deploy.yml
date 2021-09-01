@@ -1,10 +1,11 @@
-name: Deploy
+name: XSERVERへの自動デプロイ
+# deployブランチへプッシュされた場合に、XSERVERに自動でデプロイします。
 
 on:
   push:
     branches:
       # - master
-      - deploy
+      - deploy #
 
 jobs:
   FTP-Deploy-Action:

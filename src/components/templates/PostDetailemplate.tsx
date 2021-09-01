@@ -5,13 +5,14 @@ import { postObject } from "../organisms/MainPostDetail";
 
 interface PostDetailemplateProps {
   post: postObject;
+  categories: any;
 }
 
 export default function PostDetailemplate(props: PostDetailemplateProps) {
-  const { post } = props;
+  const { post, categories } = props;
 
   return (
-    <Template>
+    <Template categories={categories}>
       <MainPostDetail post={post} />
     </Template>
   );

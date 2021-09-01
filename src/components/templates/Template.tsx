@@ -8,7 +8,7 @@ import FeaturedPost from "../molecules/FeaturedPost";
 import Sidebar from "../organisms/Sidebar";
 import Footer from "../organisms/Footer";
 import { sidebar } from "../../utils/sidebar";
-import { sections } from "../../utils/sections";
+// import { sections } from "../../utils/sections";
 
 export default function Template(props: any) {
   const { mainFeaturedPost, featuredPosts, categories } = props;

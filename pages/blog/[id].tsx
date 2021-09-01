@@ -1,8 +1,8 @@
 import { client } from "../../libs/client";
 import PostDetailemplate from "../../src/components/templates/PostDetailemplate";
 
-export default function PostDetailPage({ post }: any) {
-  return <PostDetailemplate post={post} />;
+export default function PostDetailPage({ post, categories }: any) {
+  return <PostDetailemplate post={post} categories={categories} />;
 }
 
 /**
@@ -26,9 +26,19 @@ export const getStaticProps = async (context: any) => {
   const id = context.params.id;
   const post = await client.get({ endpoint: "blog", contentId: id });
 
+  /** カテゴリー一覧 */
+  const responseCategoryList: any = await client.get({
+    endpoint: "category",
+    queries: { fields: "id,category" },
+  });
+  const categoryList = responseCategoryList.contents.map((content: any) => {
+    return { url: [content.id], title: content.category };
+  });
+
   return {
     props: {
       post: post,
+      categories: categoryList,
     },
   };
 };
