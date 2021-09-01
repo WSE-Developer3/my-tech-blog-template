@@ -7,8 +7,6 @@ import NextLink from "next/link";
 import algoliasearch from "algoliasearch/lite";
 import { InstantSearch, SearchBox, connectHits } from "react-instantsearch-dom";
 
-// const CLIENT: string = process.env.ALGOLIA_SEARCH_CLIENT;
-
 const searchClient = algoliasearch(
   "IJHEWO1FRR",
   "3cdac3eb34cf5bf394e477e1584d8ef8"
@@ -51,13 +49,6 @@ export default function Header(props: HeaderProps) {
           noWrap
           sx={{ flex: 1 }}
         >
-          {/*
-             basePath を利用する場合は、リンク系はnext/linkかnext/routerを使わないと行けない。→ つまりmuiのlinkは使わないこと！
-             https://nextjs.org/docs/api-reference/next.config.js/basepath
-
-             NextLinkのpassHref は重要
-           * https://nextjs.org/docs/api-reference/next/link#if-the-child-is-a-function-component
-           */}
           <NextLink href="/" passHref>
             <MuiLink underline="hover">{title}</MuiLink>
           </NextLink>
@@ -68,8 +59,6 @@ export default function Header(props: HeaderProps) {
             indexName="paths_are"
             searchClient={searchClient}
             onSearchStateChange={(searchState) => {
-              // use the searchState
-              console.log(searchState);
               setSearchQuery(searchState.query);
             }}
           >
@@ -82,9 +71,6 @@ export default function Header(props: HeaderProps) {
           </InstantSearch>
         </div>
         <IconButton></IconButton>
-        {/* <Button variant="outlined" size="small">
-          Sign up
-        </Button> */}
       </Toolbar>
       <Toolbar
         component="nav"
@@ -92,7 +78,11 @@ export default function Header(props: HeaderProps) {
         sx={{ justifyContent: "left", overflowX: "auto" }}
       >
         {sections.map((section) => (
-          <NextLink key={section.title} href={`/${section.url}`} passHref>
+          <NextLink
+            key={section.title}
+            href={`/category/${section.url}`}
+            passHref
+          >
             <MuiLink
               color="inherit"
               noWrap

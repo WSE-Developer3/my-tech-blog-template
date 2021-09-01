@@ -6,13 +6,13 @@ import PostItem from "../molecules/PostItem";
 import { PostItemProps } from "../molecules/PostItem";
 // import PostItemProps from "../molecules/PostItem";
 
-interface MainHomeProps {
+interface MainPostListProps {
   posts: ReadonlyArray<PostItemProps>;
   title: string;
   category?: string;
 }
 
-export default function MainHome(props: MainHomeProps) {
+export default function MainPostList(props: MainPostListProps) {
   const { posts, title, category } = props;
 
   return (

@@ -11,13 +11,14 @@ import { sidebar } from "../../utils/sidebar";
 import { sections } from "../../utils/sections";
 
 export default function Template(props: any) {
-  const { mainFeaturedPost, featuredPosts } = props;
+  const { mainFeaturedPost, featuredPosts, categories } = props;
 
   return (
     <React.Fragment>
       <CssBaseline />
       <Container maxWidth="lg">
-        <Header title="パスアの開発ブログ" sections={sections} />
+        {/* <Header title="パスアの開発ブログ" sections={sections} /> */}
+        <Header title="パスアの開発ブログ" sections={categories} />
         <main>
           {mainFeaturedPost !== undefined && mainFeaturedPost !== null ? (
             <MainFeaturedPost post={mainFeaturedPost} />

@@ -5,12 +5,14 @@ export default function BlogListPage({
   mainFeaturedPost,
   featuredPosts,
   posts,
+  categories,
 }: any) {
   return (
     <PostListTemplate
       mainFeaturedPost={mainFeaturedPost}
       featuredPosts={featuredPosts}
       posts={posts}
+      categories={categories}
     />
   );
 }
@@ -51,11 +53,22 @@ export const getStaticProps = async () => {
   /** 記事一覧 */
   const blog: any = await client.get({ endpoint: "blog" });
 
+  /** カテゴリー一覧 */
+  const responseCategoryList: any = await client.get({
+    endpoint: "category",
+    queries: { fields: "id,category" },
+  });
+  const categoryList = responseCategoryList.contents.map((content: any) => {
+    return { url: [content.id], title: content.category };
+  });
+  // console.log(responseCategoryList);
+
   return {
     props: {
       mainFeaturedPost: mainFeaturedPost,
       featuredPosts: featuredPosts,
       posts: blog.contents,
+      categories: categoryList,
     },
   };
 };

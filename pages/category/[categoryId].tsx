@@ -1,8 +1,18 @@
 import { client } from "../../libs/client";
 import CategoryTemplate from "../../src/components/templates/CategoryTemplate";
 
-export default function CategoryFilteredPage({ posts, category }: any) {
-  return <CategoryTemplate posts={posts} category={category} />;
+export default function CategoryFilteredPage({
+  posts,
+  category,
+  categories,
+}: any) {
+  return (
+    <CategoryTemplate
+      posts={posts}
+      category={category}
+      categories={categories}
+    />
+  );
 }
 
 // 静的生成のためのパスを作成
@@ -26,10 +36,20 @@ export const getStaticProps = async (context: any) => {
     queries: { filters: `category[contains]${category}` },
   });
 
+  /** カテゴリー一覧 */
+  const responseCategoryList: any = await client.get({
+    endpoint: "category",
+    queries: { fields: "id,category" },
+  });
+  const categoryList = responseCategoryList.contents.map((content: any) => {
+    return { url: [content.id], title: content.category };
+  });
+
   return {
     props: {
       posts: blogFilterByCategory.contents,
       category: category,
+      categories: categoryList,
     },
   };
 };
