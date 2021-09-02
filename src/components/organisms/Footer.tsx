@@ -33,7 +33,19 @@ export default function Footer(props: FooterProps) {
     <Box
       component="footer"
       color="secondary.main"
-      sx={{ bgcolor: "#20232a", mt: 2, py: 6 }}
+      boxShadow={5}
+      sx={{
+        bgcolor: "#20232a",
+        mt: 2,
+        py: 6,
+        // color: "#fff",
+        /**
+         * ページの内容量が少なくてもフッターを下に固定する
+         */
+        position: "absolute",
+        bottom: 0,
+        width: "100%",
+      }}
     >
       <Container maxWidth="lg">
         <Typography variant="h6" align="center" gutterBottom>

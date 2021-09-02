@@ -34,7 +34,7 @@ export default function Template(props: any) {
             <Sidebar
               title={sidebar.title}
               description={sidebar.description}
-              archives={sidebar.archives}
+              // archives={sidebar.archives}
               social={sidebar.social}
             />
           </Grid>

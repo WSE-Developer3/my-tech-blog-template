@@ -3,24 +3,25 @@ import Grid from "@material-ui/core/Grid";
 import Stack from "@material-ui/core/Stack";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
-import Link from "@material-ui/core/Link";
 import MySearchBox from "../MySearchBox";
+import MuiLink from "../../Link";
 
 interface SidebarProps {
-  archives: ReadonlyArray<{
-    url: string;
-    title: string;
-  }>;
+  // archives: ReadonlyArray<{
+  //   url: string;
+  //   title: string;
+  // }>;
   description: string;
   social: ReadonlyArray<{
     icon: React.ElementType;
     name: string;
+    url: string;
   }>;
   title: string;
 }
 
 export default function Sidebar(props: SidebarProps) {
-  const { archives, description, social, title } = props;
+  const { /* archives, */ description, social, title } = props;
 
   return (
     <Grid item xs={12} md={4}>
@@ -32,34 +33,17 @@ export default function Sidebar(props: SidebarProps) {
         <Typography>{description}</Typography>
       </Paper>
       <Typography variant="h6" gutterBottom sx={{ mt: 3 }}>
-        Archives
-      </Typography>
-      {archives.map((archive) => (
-        <Link
-          display="block"
-          variant="body1"
-          href={archive.url}
-          key={archive.title}
-        >
-          {archive.title}
-        </Link>
-      ))}
-      <Typography variant="h6" gutterBottom sx={{ mt: 3 }}>
         Social
       </Typography>
       {social.map((network) => (
-        <Link
-          display="block"
-          variant="body1"
-          href="#"
-          key={network.name}
-          sx={{ mb: 0.5 }}
-        >
-          <Stack direction="row" spacing={1} alignItems="center">
-            <network.icon />
-            <span>{network.name}</span>
-          </Stack>
-        </Link>
+        <Typography variant="subtitle2" gutterBottom sx={{ mt: 1 }}>
+          <MuiLink href={`${network.url}`}>
+            <Stack direction="row" spacing={1} alignItems="center">
+              <network.icon />
+              <span>{network.name}</span>
+            </Stack>
+          </MuiLink>
+        </Typography>
       ))}
     </Grid>
   );
