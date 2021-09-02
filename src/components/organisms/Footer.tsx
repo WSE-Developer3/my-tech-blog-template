@@ -2,7 +2,7 @@ import * as React from "react";
 import Box from "@material-ui/core/Box";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
-import Link from "@material-ui/core/Link";
+// import Link from "@material-ui/core/Link";
 
 function Copyright() {
   return (
@@ -12,9 +12,9 @@ function Copyright() {
       align="center"
     >
       {"Copyright © "}
-      <Link color="inherit" href="https://paths-are.com/">
-        Paths-are パスア Shinkawa Shinji
-      </Link>{" "}
+      {/* <Link color="inherit" href="https://paths-are.com/"> */}
+      {`Paths are - Shinkawa Shinji `}
+      {/* </Link>{" "} */}
       {new Date().getFullYear()}
       {"."}
     </Typography>

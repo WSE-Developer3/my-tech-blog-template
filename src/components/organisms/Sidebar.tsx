@@ -1,9 +1,10 @@
-import * as React from 'react';
-import Grid from '@material-ui/core/Grid';
-import Stack from '@material-ui/core/Stack';
-import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
-import Link from '@material-ui/core/Link';
+import * as React from "react";
+import Grid from "@material-ui/core/Grid";
+import Stack from "@material-ui/core/Stack";
+import Paper from "@material-ui/core/Paper";
+import Typography from "@material-ui/core/Typography";
+import Link from "@material-ui/core/Link";
+import MySearchBox from "../MySearchBox";
 
 interface SidebarProps {
   archives: ReadonlyArray<{
@@ -23,7 +24,8 @@ export default function Sidebar(props: SidebarProps) {
 
   return (
     <Grid item xs={12} md={4}>
-      <Paper elevation={0} sx={{ p: 2, bgcolor: 'grey.200' }}>
+      <MySearchBox />
+      <Paper elevation={0} sx={{ p: 2, bgcolor: "grey.200" }}>
         <Typography variant="h6" gutterBottom>
           {title}
         </Typography>
@@ -33,7 +35,12 @@ export default function Sidebar(props: SidebarProps) {
         Archives
       </Typography>
       {archives.map((archive) => (
-        <Link display="block" variant="body1" href={archive.url} key={archive.title}>
+        <Link
+          display="block"
+          variant="body1"
+          href={archive.url}
+          key={archive.title}
+        >
           {archive.title}
         </Link>
       ))}

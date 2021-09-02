@@ -17,7 +17,6 @@ export default function Template(props: any) {
     <React.Fragment>
       <CssBaseline />
       <Container maxWidth="lg">
-        {/* <Header title="パスアの開発ブログ" sections={sections} /> */}
         <Header title="パスアの開発ブログ" sections={categories} />
         <main>
           {mainFeaturedPost !== undefined && mainFeaturedPost !== null ? (
