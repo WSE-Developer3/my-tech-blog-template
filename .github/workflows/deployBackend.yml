@@ -27,6 +27,8 @@ jobs:
 
       - name: １．最新の記事一覧をalgoliaのインデックスに登録
         run: npm run algolia-index-update
+        env:
+          ALGOLIA_ADMIN_API_KEY: ${{ secrets.ALGOLIA_ADMIN_API_KEY }}
 
       - name: ２．ビルド実行
         run: npm run build
