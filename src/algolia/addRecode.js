@@ -21,7 +21,7 @@ const main = async () => {
       },
     }
   );
-  console.log(blogList);
+  console.log(response);
   const blogList = await response.json();
   console.log(blogList);
   const objects = await blogList.contents.map((obj) => ({

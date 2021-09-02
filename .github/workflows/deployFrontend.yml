@@ -4,7 +4,10 @@ name: フロント画面更新時のXSERVERへの自動デプロイ
 on:
   push:
     branches:
-      - master
+      # - master
+      - deploy
+      # https://budougumi0617.github.io/2020/11/21/execute_steps_with_iflese_in_github_actions/
+      # コメントの内容によって処理を実行については、この記事が参考になるかも。
 
 jobs:
   FTP-Deploy-Action:
