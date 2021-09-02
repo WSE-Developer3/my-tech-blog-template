@@ -29,6 +29,7 @@ jobs:
         run: npm run algolia-index-update
         env:
           ALGOLIA_ADMIN_API_KEY: ${{ secrets.ALGOLIA_ADMIN_API_KEY }}
+          MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY }}
 
       # - name: ２．ビルド実行
       #   run: npm run build
