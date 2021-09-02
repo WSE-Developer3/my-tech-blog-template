@@ -36,7 +36,12 @@ export default function Sidebar(props: SidebarProps) {
         Social
       </Typography>
       {social.map((network) => (
-        <Typography variant="subtitle2" gutterBottom sx={{ mt: 1 }}>
+        <Typography
+          key={network.name}
+          variant="subtitle2"
+          gutterBottom
+          sx={{ mt: 1 }}
+        >
           <MuiLink href={`${network.url}`}>
             <Stack direction="row" spacing={1} alignItems="center">
               <network.icon />

@@ -7,6 +7,8 @@ import { CacheProvider, EmotionCache } from "@emotion/react";
 import theme from "../src/theme";
 import createEmotionCache from "../src/createEmotionCache";
 
+import usePageView from "../src/hooks/usePageView";
+
 import "../src/styles/global.css";
 
 // Client-side cache, shared for the whole session of the user in the browser.
@@ -18,6 +20,9 @@ interface MyAppProps extends AppProps {
 
 export default function MyApp(props: MyAppProps) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
+
+  usePageView();
+
   return (
     <CacheProvider value={emotionCache}>
       <Head>

@@ -6,10 +6,6 @@ import CardActionArea from "@material-ui/core/CardActionArea";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import { useRouter } from "next/router";
-// import Box from "@material-ui/core/Box";
-// import TagIcon from "@material-ui/icons/Tag";
-// import Chip from "@material-ui/core/Chip";
-// import Stack from "@material-ui/core/Stack";
 
 export interface PostItemProps {
   post: {
@@ -46,12 +42,6 @@ export default function PostItem(props: PostItemProps) {
             <Typography variant="subtitle1" paragraph>
               {post.description}
             </Typography>
-            {/* <Typography variant="subtitle1" paragraph>
-              <Stack direction="row" spacing={1}>
-                <Chip label="react" variant="outlined" />
-                <Chip label="next.js" variant="outlined" />
-              </Stack>
-            </Typography> */}
           </CardContent>
           <CardMedia
             component="img"

@@ -3,6 +3,7 @@ import Document, { Html, Head, Main, NextScript } from "next/document";
 import createEmotionServer from "@emotion/server/create-instance";
 import theme from "../src/theme";
 import createEmotionCache from "../src/createEmotionCache";
+import { existsGaId, GA_ID } from "../src/libs/gtag";
 
 export default class MyDocument extends Document {
   render() {
@@ -22,12 +23,34 @@ export default class MyDocument extends Document {
             crossorigin="anonymous"
           /> */}
 
+          {/* Algolia スタイル */}
           <link
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/instantsearch.css@7.4.5/themes/satellite-min.css"
             integrity="sha256-TehzF/2QvNKhGQrrNpoOb2Ck4iGZ1J/DI4pkd2oUsBc="
             crossOrigin="anonymous"
           />
+
+          {/* Google Analytics */}
+          {existsGaId && (
+            <>
+              <script
+                async
+                src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+              />
+              <script
+                dangerouslySetInnerHTML={{
+                  __html: `
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', '${GA_ID}', {
+                    page_path: window.location.pathname,
+                  });`,
+                }}
+              />
+            </>
+          )}
         </Head>
         <body>
           <Main />

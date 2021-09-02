@@ -37,6 +37,7 @@
     "algolia-index-update": "node --trace-warnings ./src/algolia/addRecode.js"
   },
   "devDependencies": {
+    "@types/gtag.js": "^0.0.7",
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",

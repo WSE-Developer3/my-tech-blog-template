@@ -22,10 +22,9 @@ const MyHits = ({ hits }: any) => (
     {hits.map((hit: any) => {
       const labelId = `checkbox-list-secondary-label-${hit.slug}`;
       return (
-        <NextLink href={`/blog/${hit.slug}`} passHref>
+        <NextLink key={hit} href={`/blog/${hit.slug}`} passHref>
           <MuiLink variant="subtitle1">
             <ListItem
-              key={hit}
               sx={{
                 marginBottom: 1,
                 boxShadow:

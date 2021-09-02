@@ -122,27 +122,27 @@ export default function CodeHighlighter(props: any) {
                   }}
                 >
                   <Tooltip title="テーマ変更" placement="top">
-                    <IconButton>
+                    <IconButton onClick={updateCodeStyle}>
                       <Brightness4Icon
                         fontSize="small"
                         sx={{
                           color: codeStyle === "dark" ? "#FFF" : "#000",
                         }}
-                        onClick={updateCodeStyle}
                       />
                     </IconButton>
                   </Tooltip>
 
                   <Tooltip title="コードをコピー" placement="top">
-                    <IconButton>
+                    <IconButton
+                      onClick={() => {
+                        copy(props.children);
+                        setMessageOpen(true);
+                      }}
+                    >
                       <ContentCopyIcon
                         fontSize="small"
                         sx={{
                           color: codeStyle === "dark" ? "#FFF" : "#000",
-                        }}
-                        onClick={() => {
-                          copy(props.children);
-                          setMessageOpen(true);
                         }}
                       />
                     </IconButton>
@@ -169,27 +169,27 @@ export default function CodeHighlighter(props: any) {
                 }}
               >
                 <Tooltip title="テーマ変更" placement="top">
-                  <IconButton>
+                  <IconButton onClick={updateCodeStyle}>
                     <Brightness4Icon
                       fontSize="small"
                       sx={{
                         color: codeStyle === "dark" ? "#FFF" : "#000",
                       }}
-                      onClick={updateCodeStyle}
                     />
                   </IconButton>
                 </Tooltip>
 
                 <Tooltip title="コードをコピー" placement="top">
-                  <IconButton>
+                  <IconButton
+                    onClick={() => {
+                      copy(props.children);
+                      setMessageOpen(true);
+                    }}
+                  >
                     <ContentCopyIcon
                       fontSize="small"
                       sx={{
                         color: codeStyle === "dark" ? "#FFF" : "#000",
-                      }}
-                      onClick={() => {
-                        copy(props.children);
-                        setMessageOpen(true);
                       }}
                     />
                   </IconButton>
