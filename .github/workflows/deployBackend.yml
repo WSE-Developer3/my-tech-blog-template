@@ -1,11 +1,15 @@
-name: XSERVERへの自動デプロイ
-# masterブランチへプッシュされた場合に、XSERVERに自動でデプロイします。
+name: 記事公開時時のXSERVERへの自動デプロイ
+# 処理概要
+# 記事を公開した際に下記の処理を行う
+# １．最新の記事一覧をalgoliaのインデックスに登録
+# ２．ビルド実行
+# ３．静的HTMLファイル出力
+# ４．XSERVERにデプロイ
+name: Deploy
 
 on:
-  push:
-    branches:
-      - master
-      # - deploy #
+  repository_dispatch:
+    types: [update_post]
 
 jobs:
   FTP-Deploy-Action:
@@ -22,7 +26,10 @@ jobs:
       - name: Install NPM packages
         run: npm ci
 
-      - name: Build Next.js app
+      - name: １．最新の記事一覧をalgoliaのインデックスに登録
+        run: npm run algolia-index-update
+
+      - name: ２．ビルド実行
         run: npm run build
         env:
           MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY }}
@@ -30,7 +37,7 @@ jobs:
           MICROCMS_SERVICE_ID: ${{ secrets.MICROCMS_SERVICE_ID }}
           ALGOLIA_ADMIN_API_KEY: ${{ secrets.ALGOLIA_ADMIN_API_KEY }}
 
-      - name: Output static html files
+      - name: ３．静的HTMLファイル出力
         run: npm run export
         env:
           MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY }}
@@ -38,7 +45,7 @@ jobs:
           MICROCMS_SERVICE_ID: ${{ secrets.MICROCMS_SERVICE_ID }}
           ALGOLIA_ADMIN_API_KEY: ${{ secrets.ALGOLIA_ADMIN_API_KEY }}
 
-      - name: FTP-Deploy-Action
+      - name: ４．XSERVERにデプロイ
         uses: SamKirkland/FTP-Deploy-Action@2.0.0
         env:
           FTP_SERVER: ${{ secrets.XSERVER_HOST_NAME }}

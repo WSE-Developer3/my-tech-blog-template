@@ -34,7 +34,7 @@
     "start-static-html": "rm -r paths-are-tech-blog-template/ && mkdir paths-are-tech-blog-template && cp -r out/* paths-are-tech-blog-template/ && start http://localhost:8000/paths-are-tech-blog-template && npm run local",
     "deploy-to-xserver": "bash UPLOADFILES_TO_XSERVER.sh",
     "deploy-to-xserver-comment": "Xサーバーへ静的htmlファイルをアップロードする",
-    "algolia": "node --trace-warnings ./src/algolia/addRecode.js"
+    "algolia-index-update": "node --trace-warnings ./src/algolia/addRecode.js"
   },
   "devDependencies": {
     "@types/node": "latest",
