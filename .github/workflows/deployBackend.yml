@@ -5,7 +5,6 @@ name: 記事公開時時のXSERVERへの自動デプロイ
 # ２．ビルド実行
 # ３．静的HTMLファイル出力
 # ４．XSERVERにデプロイ
-name: Deploy
 
 on:
   repository_dispatch:
