@@ -7,13 +7,16 @@ export default function PostDetailPage() {
   const [post, setPost] = useState({
     title: "",
     body: "",
+    id: "",
+    imgUrl: "",
+    featuredImage: "",
   });
   const [categoryList, setCategoryList] = useState([{ url: [""], title: "" }]);
 
   useEffect(() => {
     if (router.isReady) {
       const { contentid, draftkey } = router.query;
-      const main = async () => {
+      const fetchMicrocmsData = async () => {
         /** プレビュー記事取得 */
         const responstPost = await fetch(
           `https://paths-are-template.microcms.io/api/v1/blog/${contentid}?draftKey=${draftkey}`,
@@ -43,7 +46,7 @@ export default function PostDetailPage() {
         );
         setCategoryList(categoryList);
       };
-      main();
+      fetchMicrocmsData();
     }
   }, [router.query]);
 

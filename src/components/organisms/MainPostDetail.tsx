@@ -3,10 +3,14 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
 import Markdown from "../Markdown";
+import ShareButtons from "../ShareButtons";
 
 export interface postObject {
+  id: string;
   title: string;
   body?: string;
+  featuredImage: any;
+  imgUrl?: string;
 }
 
 interface MainPostDetailProps {
@@ -58,6 +62,10 @@ export default function MainPostDetail(props: MainPostDetailProps) {
         </Typography>
         <Divider />
         <Markdown className="markdown">{post.body || "本文無し"}</Markdown>
+        <ShareButtons
+          title={post.title}
+          url={`https://works.paths-are.com/paths-are-tech-blog-template/blog/${post.id}`}
+        />
       </Grid>
     </ThemeContext.Provider>
   );
