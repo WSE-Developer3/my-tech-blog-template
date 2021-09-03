@@ -1,10 +1,7 @@
 import * as React from "react";
-import Grid from "@material-ui/core/Grid";
-import Typography from "@material-ui/core/Typography";
-import Divider from "@material-ui/core/Divider";
+import { Grid, Typography, Divider } from "@mui/material";
 import PostItem from "../molecules/PostItem";
 import { PostItemProps } from "../molecules/PostItem";
-// import PostItemProps from "../molecules/PostItem";
 
 interface MainPostListProps {
   posts: ReadonlyArray<PostItemProps>;

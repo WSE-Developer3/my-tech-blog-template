@@ -1,8 +1,6 @@
 import React from "react";
 import ReactMarkdown from "markdown-to-jsx";
-import Typography from "@material-ui/core/Typography";
-import Link from "@material-ui/core/Link";
-import Box from "@material-ui/core/Box";
+import { Box, Typography, Link as MuiLink } from "@mui/material";
 import CodeHighlighter from "./CodeHighlighter";
 
 function MarkdownListItem(props: any) {
@@ -39,7 +37,7 @@ const options = {
       component: Typography,
       props: { paragraph: true },
     },
-    a: { component: Link },
+    a: { component: MuiLink },
     li: {
       component: MarkdownListItem,
     },

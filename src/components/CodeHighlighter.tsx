@@ -1,17 +1,14 @@
 import React, { useContext } from "react";
-import Box from "@material-ui/core/Box";
+import { Box, IconButton, Snackbar, Tooltip } from "@mui/material";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import {
   materialLight,
   materialDark,
 } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import copy from "copy-to-clipboard";
-import ContentCopyIcon from "@material-ui/icons/ContentCopy";
-import Brightness4Icon from "@material-ui/icons/Brightness4";
-import Snackbar from "@material-ui/core/Snackbar";
-import IconButton from "@material-ui/core/IconButton";
-import CloseIcon from "@material-ui/icons/Close";
-import Tooltip from "@material-ui/core/Tooltip";
+import ContentCopyIcon from "@mui/icons-material/ContentCopy";
+import Brightness4Icon from "@mui/icons-material/Brightness4";
+import CloseIcon from "@mui/icons-material/Close";
 import { ThemeContext } from "./organisms/MainPostDetail";
 
 export default function CodeHighlighter(props: any) {

@@ -1,7 +1,5 @@
 import * as React from "react";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import Grid from "@material-ui/core/Grid";
-import Container from "@material-ui/core/Container";
+import { Container, Grid, CssBaseline } from "@mui/material";
 import Header from "../organisms/Header";
 import MainFeaturedPost from "../molecules/MainFeaturedPost";
 import FeaturedPost from "../molecules/FeaturedPost";

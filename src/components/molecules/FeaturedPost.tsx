@@ -1,10 +1,12 @@
 import * as React from "react";
-import Typography from "@material-ui/core/Typography";
-import Grid from "@material-ui/core/Grid";
-import Card from "@material-ui/core/Card";
-import CardActionArea from "@material-ui/core/CardActionArea";
-import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
+import {
+  Grid,
+  Typography,
+  Card,
+  CardActionArea,
+  CardContent,
+  CardMedia,
+} from "@mui/material";
 import { useRouter } from "next/router";
 
 interface FeaturedPostProps {

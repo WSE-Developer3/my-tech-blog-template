@@ -1,10 +1,6 @@
 import * as React from "react";
-import Paper from "@material-ui/core/Paper";
-import Typography from "@material-ui/core/Typography";
-import Grid from "@material-ui/core/Grid";
-import Box from "@material-ui/core/Box";
+import { Paper, Grid, Box, Typography, Link as MuiLink } from "@mui/material";
 import NextLink from "next/link";
-import MuiLink from "@material-ui/core/Link";
 
 interface MainFeaturedPostProps {
   post: {

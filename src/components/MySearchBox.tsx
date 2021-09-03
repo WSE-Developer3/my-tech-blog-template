@@ -1,13 +1,15 @@
 import * as React from "react";
 import NextLink from "next/link";
-import MuiLink from "@material-ui/core/Link";
+import {
+  Box,
+  Link as MuiLink,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemText,
+} from "@mui/material";
 import algoliasearch from "algoliasearch/lite";
 import { InstantSearch, SearchBox, connectHits } from "react-instantsearch-dom";
-import Box from "@material-ui/core/Box";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemButton from "@material-ui/core/ListItemButton";
-import ListItemText from "@material-ui/core/ListItemText";
 
 const searchClient = algoliasearch(
   "IJHEWO1FRR",

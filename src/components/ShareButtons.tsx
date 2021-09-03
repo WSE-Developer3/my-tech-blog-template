@@ -1,24 +1,16 @@
 import React from "react";
-import Stack from "@material-ui/core/Stack";
+import { Stack } from "@mui/material";
 import {
   FacebookShareButton,
   HatenaShareButton,
   LineShareButton,
-  // PinterestShareButton,
   PocketShareButton,
   TwitterShareButton,
 } from "react-share";
-// import {
-//   FacebookShareCount,
-//   HatenaShareCount,
-//   PinterestShareCount,
-// } from "react-share";
 import {
   FacebookIcon,
-  // FacebookMessengerIcon,
   HatenaIcon,
   LineIcon,
-  // PinterestIcon,
   PocketIcon,
   TwitterIcon,
 } from "react-share";

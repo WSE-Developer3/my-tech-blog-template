@@ -1,10 +1,6 @@
 import * as React from "react";
-import Grid from "@material-ui/core/Grid";
-import Stack from "@material-ui/core/Stack";
-import Paper from "@material-ui/core/Paper";
-import Typography from "@material-ui/core/Typography";
+import { Paper, Grid, Stack, Typography, Link as MuiLink } from "@mui/material";
 import MySearchBox from "../MySearchBox";
-import MuiLink from "../../Link";
 
 interface SidebarProps {
   // archives: ReadonlyArray<{

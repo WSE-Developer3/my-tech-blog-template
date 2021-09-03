@@ -1,7 +1,5 @@
 import React, { createContext, useState } from "react";
-import Grid from "@material-ui/core/Grid";
-import Typography from "@material-ui/core/Typography";
-import Divider from "@material-ui/core/Divider";
+import { Grid, Typography, Divider } from "@mui/material";
 import Markdown from "../Markdown";
 import ShareButtons from "../ShareButtons";
 

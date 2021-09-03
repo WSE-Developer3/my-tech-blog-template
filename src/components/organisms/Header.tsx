@@ -1,7 +1,5 @@
 import * as React from "react";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
-import MuiLink from "@material-ui/core/Link";
+import { Toolbar, Typography, Link as MuiLink } from "@mui/material";
 import NextLink from "next/link";
 
 interface HeaderProps {
