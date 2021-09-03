@@ -60,8 +60,8 @@ CI：Github Actions
 ## インストール
 
 ```shell
-git clone https://github.com/WSE-Developer3/jamstack-blog-with-nextjs-muiv5-microCMS.git
-cd jamstack-blog-with-nextjs-muiv5-microCMS
+git clone https://github.com/WSE-Developer3/my-tech-blog-template.git
+cd my-tech-blog-template
 cp .env.sample .env
 ```
 
