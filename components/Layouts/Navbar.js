@@ -35,7 +35,10 @@ class Navbar extends Component {
       let fromTop = window.scrollY;
       mainNavLinks.forEach((link) => {
         if (link.hash) {
+          console.log(link.hash);
+          // console.log(link.hash);
           let section = document.querySelector(link.hash);
+          console.log("section", section);
 
           if (
             section.offsetTop <= fromTop &&
@@ -119,7 +122,7 @@ class Navbar extends Component {
                     Features
                   </AnchorLink>
                 </li>
-                <li className="nav-item">
+                {/* <li className="nav-item">
                   <AnchorLink
                     onClick={this.toggleNavbar}
                     offset={() => -10}
@@ -128,7 +131,7 @@ class Navbar extends Component {
                   >
                     Testimonials
                   </AnchorLink>
-                </li>
+                </li> */}
                 <li className="nav-item">
                   <AnchorLink
                     onClick={this.toggleNavbar}
