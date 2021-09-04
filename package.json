@@ -19,10 +19,16 @@
     "next": "latest",
     "raw-loader": "^4.0.2",
     "react": "latest",
+    "react-accessible-accordion": "^3.3.5",
+    "react-anchor-link-smooth-scroll": "^1.0.12",
     "react-dom": "latest",
+    "react-image-lightbox": "^5.1.4",
     "react-instantsearch-dom": "^6.12.1",
+    "react-preloading-screen": "^1.0.2",
     "react-share": "^4.4.0",
-    "react-syntax-highlighter": "^15.4.4"
+    "react-sweet-progress": "^1.1.2",
+    "react-syntax-highlighter": "^15.4.4",
+    "react-visibility-sensor": "^5.1.1"
   },
   "scripts": {
     "dev": "next",
