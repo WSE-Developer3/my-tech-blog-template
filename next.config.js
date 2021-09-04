@@ -1,3 +1,6 @@
+const URL_PREFIX = "/paths-are-tech-blog-template";
+const urlPrefix = process.env.URL_PREFIX ? "/" + process.env.URL_PREFIX : "";
+
 module.exports = {
   /**
    * webpackカスタマイズ
@@ -25,8 +28,9 @@ module.exports = {
    * https:my-domain-name.com/ → ×
    * https:my-domain-name.com/jamstackblog-with-next-muiv5-microcms → 〇
    */
-  basePath: "/paths-are-tech-blog-template",
-
+  basePath: process.env.BASE_PATH,
+  assetPrefix: process.env.BASE_PATH,
+  publicRuntimeConfig: { urlPrefix: process.env.BASE_PATH }, // 画像読み込みに使う。参考：https://maku.blog/p/xjjbwes/
   /**
    * algolia
    * https://www.algolia.com/doc/guides/building-search-ui/widgets/customize-an-existing-widget/react/#style-your-widgets
