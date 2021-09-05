@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Paper, Grid, Stack, Typography, Link as MuiLink } from "@mui/material";
 import MySearchBox from "../MySearchBox";
-import Avatar from "@mui/material/Avatar";
+// import Avatar from "@mui/material/Avatar";
 import InsertEmoticonIcon from "@mui/icons-material/InsertEmoticon";
 
 interface SidebarProps {
