@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { url } from "../../src/libs/config";
+import { url } from "../../libs/config";
 
 class About extends Component {
   render() {

@@ -24,6 +24,7 @@
     "react-dom": "latest",
     "react-image-lightbox": "^5.1.4",
     "react-instantsearch-dom": "^6.12.1",
+    "react-owl-carousel": "^2.3.3",
     "react-preloading-screen": "^1.0.2",
     "react-share": "^4.4.0",
     "react-sweet-progress": "^1.1.2",
@@ -53,6 +54,7 @@
     "@types/react-syntax-highlighter": "^13.5.2",
     "css-loader": "^6.2.0",
     "dotenv": "^10.0.0",
+    "mixitup": "^3.3.1",
     "node-fetch": "^2.6.1",
     "style-loader": "^3.2.1",
     "typescript": "latest"

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Link from "next/link";
-import { url } from "../../src/libs/config";
+import { url } from "../../libs/config";
 
 class Blog extends Component {
   render() {

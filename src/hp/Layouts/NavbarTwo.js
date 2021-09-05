@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import Link from "next/link";
 import AnchorLink from "react-anchor-link-smooth-scroll";
-import { url } from "../../src/libs/config";
+import { url } from "../../libs/config";
+import NextLink from "next/link";
 
-class NavbarFive extends Component {
+class NavbarTwo extends Component {
   state = {
     collapsed: true,
   };
@@ -62,13 +63,15 @@ class NavbarFive extends Component {
       <>
         <nav
           id="navbar"
-          className="navbar navbar-expand-lg navbar-style-one navbar-light bg-light"
+          className="navbar navbar-expand-lg navbar-style-two navbar-light bg-light"
         >
           <div className="container">
-            <Link href="/app">
+            <Link href="/freelancer">
               <a className="navbar-brand">
-                <img src={url("/images/white-logo.png")} alt="logo" />
-                <img src={url("/images/black-logo.png")} alt="logo" />
+                {/* <img src={`${url("/imgs/logo03-white.png")}`} alt="logo" /> */}
+                {/* <img src={`${url("/imgs/logo03-black.png")}`} alt="logo" /> */}
+                <img src={`${url("/imgs/logo03-white_v0.2.png")}`} alt="logo" />
+                {/* <img src={url("/images/black-logo.png")} alt="logo" /> */}
               </a>
             </Link>
 
@@ -112,31 +115,21 @@ class NavbarFive extends Component {
                     onClick={this.toggleNavbar}
                     offset={() => 0}
                     className="nav-link"
-                    href="#features"
+                    href="#skill"
                   >
-                    Features
+                    Skill
                   </AnchorLink>
                 </li>
-                <li className="nav-item">
+                {/* <li className="nav-item">
                   <AnchorLink
                     onClick={this.toggleNavbar}
                     offset={() => -10}
                     className="nav-link"
-                    href="#testimonials"
+                    href="#portfolio"
                   >
-                    Testimonials
+                    Portfolio
                   </AnchorLink>
-                </li>
-                <li className="nav-item">
-                  <AnchorLink
-                    onClick={this.toggleNavbar}
-                    offset={() => -10}
-                    className="nav-link"
-                    href="#faq"
-                  >
-                    Faq
-                  </AnchorLink>
-                </li>
+                </li> */}
                 <li className="nav-item">
                   <AnchorLink
                     onClick={this.toggleNavbar}
@@ -152,20 +145,27 @@ class NavbarFive extends Component {
                     onClick={this.toggleNavbar}
                     offset={() => -10}
                     className="nav-link"
-                    href="#subscribe"
+                    href="#contact"
                   >
-                    Subscribe
+                    Contact
                   </AnchorLink>
+                </li>
+                <li className="nav-item">
+                  <NextLink href="/blog">
+                    <a className="nav-link" target="_blank">
+                      Blog
+                    </a>
+                  </NextLink>
                 </li>
               </ul>
 
-              <ul className="others-option">
+              {/* <ul className="others-option">
                 <li>
                   <a href="/signin" className="btn btn-primary">
                     sign in
                   </a>
                 </li>
-              </ul>
+              </ul> */}
             </div>
           </div>
         </nav>
@@ -174,4 +174,4 @@ class NavbarFive extends Component {
   }
 }
 
-export default NavbarFive;
+export default NavbarTwo;
