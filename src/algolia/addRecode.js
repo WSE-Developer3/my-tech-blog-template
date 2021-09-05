@@ -14,15 +14,15 @@ const index = client.initIndex("paths_are");
 
 const main = async () => {
   const response = await fetch(
-    "https://paths-are-template.microcms.io/api/v1/blog?fields=id%2Ctitle%2Cbody",
+    "https://paths-are-template.microcms.io/api/v1/post?fields=id%2Ctitle%2Cbody",
     {
       headers: {
         "X-API-KEY": process.env.MICROCMS_API_KEY,
       },
     }
   );
-  const blogList = await response.json();
-  const objects = await blogList.contents.map((obj) => ({
+  const postList = await response.json();
+  const objects = await postList.contents.map((obj) => ({
     title: obj.title,
     slug: obj.id,
     body: obj.body,

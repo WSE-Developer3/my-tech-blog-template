@@ -6,16 +6,16 @@ import { PostItemProps } from "../molecules/PostItem";
 interface MainPostListProps {
   posts: ReadonlyArray<PostItemProps>;
   title: string;
-  category?: string;
+  tag?: string;
 }
 
 export default function MainPostList(props: MainPostListProps) {
-  const { posts, title, category } = props;
+  const { posts, title, tag } = props;
 
   return (
     <Grid item xs={12} md={8}>
       <Typography variant="h6" gutterBottom>
-        {category && "[" + category + "]に関する"}
+        {tag && "[" + tag + "]に関する"}
         {title}
       </Typography>
       <Divider

@@ -1,6 +1,6 @@
 export const sections = [
-  { title: "React", url: "category/reactjs" },
-  { title: "Next.js", url: "category/nextjs" },
-  { title: "Excel - VBA", url: "category/vba" },
-  { title: "GAS - Google Apps Script", url: "category/gas-google-apps-script" },
+  { title: "React", url: "tag/reactjs" },
+  { title: "Next.js", url: "tag/nextjs" },
+  { title: "Excel - VBA", url: "tag/vba" },
+  { title: "GAS - Google Apps Script", url: "tag/gas-google-apps-script" },
 ];

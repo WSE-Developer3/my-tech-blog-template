@@ -30,10 +30,26 @@ export default function PostItem(props: PostItemProps) {
       <CardActionArea
         component="a"
         onClick={() => {
-          router.push(`/blog/${post.id}`);
+          router.push(`/post/${post.id}`);
         }}
       >
-        <Card sx={{ display: "flex", height: 136, position: "relative" }}>
+        <Card
+          sx={{
+            display: { xs: "blox", md: "flex" },
+            minHeight: 136,
+            position: "relative",
+          }}
+        >
+          <CardMedia
+            component="img"
+            sx={{
+              width: "100%",
+              display: { xs: "block", sm: "none" },
+              // objectFit: "cover",
+            }}
+            image={post.featuredImage.url}
+            alt={post.imageLabel}
+          />
           <CardContent sx={{ flex: 1 }}>
             <Typography component="h2" variant="h5">
               {post.title}

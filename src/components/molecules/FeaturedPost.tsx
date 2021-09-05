@@ -8,6 +8,7 @@ import {
   CardMedia,
 } from "@mui/material";
 import { useRouter } from "next/router";
+import { dateFormat } from "../../libs/dateFormat";
 
 interface FeaturedPostProps {
   post: {
@@ -30,19 +31,34 @@ export default function FeaturedPost(props: FeaturedPostProps) {
       <CardActionArea
         component="a"
         onClick={() => {
-          router.push(`/blog/${post.id}`);
+          router.push(`/post/${post.id}`);
         }}
       >
-        <Card sx={{ display: "flex", height: 160 }}>
+        <Card
+          sx={{
+            display: { xs: "blox", md: "flex" },
+            minHeight: 160,
+          }}
+        >
+          <CardMedia
+            component="img"
+            sx={{
+              width: "100%",
+              display: { xs: "block", sm: "none" },
+            }}
+            image={post.image}
+            alt={post.imageLabel}
+          />
           <CardContent sx={{ flex: 1 }}>
             <Typography component="h2" variant="h5">
               {post.title}
             </Typography>
             <Typography variant="subtitle1" color="text.secondary">
-              {post.date}
+              {dateFormat(post.date)}
             </Typography>
             <Typography variant="subtitle1" paragraph>
-              {post.description.substring(0, 30)}
+              {/* {post.description.substring(0, 30)} */}
+              {post.description}
             </Typography>
             <Typography variant="subtitle1" color="primary"></Typography>
           </CardContent>

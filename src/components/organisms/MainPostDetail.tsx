@@ -62,7 +62,7 @@ export default function MainPostDetail(props: MainPostDetailProps) {
         <Markdown className="markdown">{post.body || "本文無し"}</Markdown>
         <ShareButtons
           title={post.title}
-          url={`https://works.paths-are.com/paths-are-tech-blog-template/blog/${post.id}`}
+          url={`https://works.paths-are.com/paths-are-tech-blog-template/post/${post.id}`}
         />
       </Grid>
     </ThemeContext.Provider>

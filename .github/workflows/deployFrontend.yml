@@ -4,8 +4,8 @@ name: フロント画面更新時のXSERVERへの自動デプロイ
 on:
   push:
     branches:
-      # - master
-      - deploy
+      - master
+      # - deploy
       # https://budougumi0617.github.io/2020/11/21/execute_steps_with_iflese_in_github_actions/
       # コメントの内容によって処理を実行については、この記事が参考になるかも。
 
@@ -28,7 +28,7 @@ jobs:
         run: npm run build
         env:
           MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY }}
-          NEXT_PUBLIC_MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY }} # プレビュー機能用
+          NEXT_PUBLIC_MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY }}
           MICROCMS_SERVICE_ID: ${{ secrets.MICROCMS_SERVICE_ID }}
           ALGOLIA_ADMIN_API_KEY: ${{ secrets.ALGOLIA_ADMIN_API_KEY }}
 
@@ -36,7 +36,7 @@ jobs:
         run: npm run export
         env:
           MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY }}
-          NEXT_PUBLIC_MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY }} # プレビュー機能用
+          NEXT_PUBLIC_MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY }}
           MICROCMS_SERVICE_ID: ${{ secrets.MICROCMS_SERVICE_ID }}
           ALGOLIA_ADMIN_API_KEY: ${{ secrets.ALGOLIA_ADMIN_API_KEY }}
 

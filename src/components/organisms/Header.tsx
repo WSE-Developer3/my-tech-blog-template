@@ -1,5 +1,11 @@
 import * as React from "react";
-import { Toolbar, Typography, Link as MuiLink } from "@mui/material";
+import {
+  Toolbar,
+  Typography,
+  Link as MuiLink,
+  Chip,
+  Stack,
+} from "@mui/material";
 import NextLink from "next/link";
 
 interface HeaderProps {
@@ -32,25 +38,31 @@ export default function Header(props: HeaderProps) {
       <Toolbar
         component="nav"
         variant="dense"
-        sx={{ justifyContent: "left", overflowX: "auto" }}
+        sx={{ justifyContent: "left", overflowX: "auto", mb: 1 }}
       >
-        {sections.map((section) => (
-          <NextLink
-            key={section.title}
-            href={`/category/${section.url}`}
-            passHref
-          >
-            <MuiLink
-              color="inherit"
-              noWrap
-              key={section.title}
-              variant="body2"
-              sx={{ p: 1, flexShrink: 0 }}
-            >
-              {section.title}
-            </MuiLink>
-          </NextLink>
-        ))}
+        <Stack direction="row" spacing="1">
+          {sections.map((section) => (
+            <NextLink key={section.title} href={`/tag/${section.url}`} passHref>
+              <MuiLink
+                color="inherit"
+                noWrap
+                key={section.title}
+                variant="body2"
+                underline="hover"
+                sx={{
+                  p: 1,
+                  flexShrink: 0,
+                  "& .MuiChip-root:hover": {
+                    color: "#FFFFFF",
+                    backgroundColor: "#556cd6",
+                  },
+                }}
+              >
+                <Chip label={section.title} variant="outlined" />
+              </MuiLink>
+            </NextLink>
+          ))}
+        </Stack>
       </Toolbar>
     </React.Fragment>
   );

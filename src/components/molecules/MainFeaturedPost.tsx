@@ -67,7 +67,7 @@ export default function MainFeaturedPost(props: MainFeaturedPostProps) {
             <Typography variant="h5" color="inherit" paragraph>
               {post.description}
             </Typography>
-            <NextLink href={`/blog/${post.id}`} passHref>
+            <NextLink href={`/post/${post.id}`} passHref>
               <MuiLink variant="subtitle1">{post.linkText}</MuiLink>
             </NextLink>
           </Box>

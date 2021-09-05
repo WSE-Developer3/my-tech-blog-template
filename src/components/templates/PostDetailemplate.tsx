@@ -6,19 +6,19 @@ import CommonMeta from "../CommonMeta";
 
 interface PostDetailemplateProps {
   post: postObject;
-  categories: any;
+  tagList: any;
 }
 
 export default function PostDetailemplate({
   post,
-  categories,
+  tagList,
 }: PostDetailemplateProps) {
   const imgUrl = post.featuredImage.url || "";
   return (
-    <Template categories={categories}>
+    <Template tagList={tagList}>
       <CommonMeta
         title={post.title}
-        url={`https://works.paths-are.com/paths-are-tech-blog-template/blog/${post.id}`}
+        url={`https://works.paths-are.com/paths-are-tech-blog-template/post/${post.id}`}
         description={post.title}
         imgUrl={imgUrl}
       />

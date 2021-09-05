@@ -13,8 +13,7 @@ export default function CommonMeta({
       <meta property="description" content={description} />
       <meta property="og:url" content={url} />
       <meta property="og:title" content={title} />
-      <meta property="og:image" content={title} />
-      <meta property="og:description" content={description} />
+      <meta property="og:image" content={imgUrl} />
       <meta property="og:type" content={"article"} />
 
       <meta name="twitter:card" content={TWITTER_CARD} />

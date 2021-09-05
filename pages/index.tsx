@@ -1,18 +1,18 @@
 import { client } from "../libs/client";
 import PostListTemplate from "../src/components/templates/PostListTemplate";
 
-export default function BlogListPage({
+export default function PostListPage({
   mainFeaturedPost,
   featuredPosts,
   posts,
-  categories,
+  tagList,
 }: any) {
   return (
     <PostListTemplate
       mainFeaturedPost={mainFeaturedPost}
       featuredPosts={featuredPosts}
       posts={posts}
-      categories={categories}
+      tagList={tagList}
     />
   );
 }
@@ -51,24 +51,24 @@ export const getStaticProps = async () => {
   }
 
   /** 記事一覧 */
-  const blog: any = await client.get({ endpoint: "blog" });
+  const fetchedPosts: any = await client.get({ endpoint: "post" });
 
   /** カテゴリー一覧 */
-  const responseCategoryList: any = await client.get({
-    endpoint: "category",
-    queries: { fields: "id,category" },
+  const responseTagList: any = await client.get({
+    endpoint: "tag",
+    queries: { fields: "id,tag" },
   });
-  const categoryList = responseCategoryList.contents.map((content: any) => {
-    return { url: [content.id], title: content.category };
+  const tagList = responseTagList.contents.map((content: any) => {
+    return { url: [content.id], title: content.tag };
   });
-  // console.log(responseCategoryList);
+  // console.log(responsetagList);
 
   return {
     props: {
       mainFeaturedPost: mainFeaturedPost,
       featuredPosts: featuredPosts,
-      posts: blog.contents,
-      categories: categoryList,
+      posts: fetchedPosts.contents,
+      tagList: tagList,
     },
   };
 };

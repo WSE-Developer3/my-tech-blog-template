@@ -8,10 +8,7 @@ function Copyright() {
       sx={{ color: "secondary.light" }}
       align="center"
     >
-      {"Copyright © "}
-      {/* <Link color="inherit" href="https://paths-are.com/"> */}
-      {`Paths are - Shinkawa Shinji `}
-      {/* </Link>{" "} */}
+      {`Copyright © Paths are - Shinkawa Shinji `}
       {new Date().getFullYear()}
       {"."}
     </Typography>

@@ -11,7 +11,7 @@ export default function PostDetailPage() {
     imgUrl: "",
     featuredImage: "",
   });
-  const [categoryList, setCategoryList] = useState([{ url: [""], title: "" }]);
+  const [tagList, setTagList] = useState([{ url: [""], title: "" }]);
 
   useEffect(() => {
     if (router.isReady) {
@@ -19,7 +19,7 @@ export default function PostDetailPage() {
       const fetchMicrocmsData = async () => {
         /** プレビュー記事取得 */
         const responstPost = await fetch(
-          `https://paths-are-template.microcms.io/api/v1/blog/${contentid}?draftKey=${draftkey}`,
+          `https://paths-are-template.microcms.io/api/v1/post/${contentid}?draftKey=${draftkey}`,
           {
             headers: {
               "X-API-KEY": process.env.NEXT_PUBLIC_MICROCMS_API_KEY || "",
@@ -30,25 +30,23 @@ export default function PostDetailPage() {
         setPost(post);
 
         /** カテゴリー一覧 */
-        const responseCategoryList: any = await fetch(
-          `https://paths-are-template.microcms.io/api/v1/category?fields=id%2Ccategory`,
+        const responseTagList: any = await fetch(
+          `https://paths-are-template.microcms.io/api/v1/tag?fields=id%2Ctag`,
           {
             headers: {
               "X-API-KEY": process.env.NEXT_PUBLIC_MICROCMS_API_KEY || "",
             },
           }
         );
-        const responseCategoryListJson: any = await responseCategoryList.json();
-        const categoryList = responseCategoryListJson.contents.map(
-          (content: any) => {
-            return { url: content.id, title: content.category };
-          }
-        );
-        setCategoryList(categoryList);
+        const responseTagListJson: any = await responseTagList.json();
+        const tagList = responseTagListJson.contents.map((content: any) => {
+          return { url: content.id, title: content.tag };
+        });
+        setTagList(tagList);
       };
       fetchMicrocmsData();
     }
   }, [router.query]);
 
-  return <PostDetailemplate post={post} categories={categoryList} />;
+  return <PostDetailemplate post={post} tagList={tagList} />;
 }

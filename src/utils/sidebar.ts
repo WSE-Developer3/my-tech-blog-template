@@ -1,10 +1,10 @@
 import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
+import GitHubIcon from "@mui/icons-material/GitHub";
 
 export const sidebar = {
-  title: "デベロッパーについて",
-  description: `フリーでフロントエンドエンジニアとして活動しています。
-  ReactとNextが大好きです。`,
+  title: "このブログの制作者",
+  description: `フロント画面の開発が大好きなフリーのデベロッパーです。好きな言語はReactとNext.js。TypeScriptとNode.jsもできます。`,
   // archives: [
   //   { title: "March 2020", url: "#" },
   //   { title: "February 2020", url: "#" },
@@ -27,7 +27,12 @@ export const sidebar = {
     {
       name: "Instagram",
       icon: InstagramIcon,
-      url: "https://www.instagram.com/paths_are_web/",
+      url: "https://www.instagram.com/paths_are_web",
+    },
+    {
+      name: "Github",
+      icon: GitHubIcon,
+      url: "https://github.com/paths-are",
     },
   ],
 };

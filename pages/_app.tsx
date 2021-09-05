@@ -27,8 +27,7 @@ export default function MyApp(props: MyAppProps) {
   return (
     <CacheProvider value={emotionCache}>
       <Head>
-        {/* <link rel="shortcut icon" href="./imgs/logo01.png" /> */}
-        <link rel="shortcut icon" href={url("/imgs/logo01.png")} />
+        <link rel="shortcut icon" href={url("/imgs/logo04.png")} />
         <title>パスアの開発ブログ</title>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
