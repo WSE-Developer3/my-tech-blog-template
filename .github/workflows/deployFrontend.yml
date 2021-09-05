@@ -1,5 +1,9 @@
 name: フロント画面更新時のXSERVERへの自動デプロイ
-# masterブランチへプッシュされた場合に、XSERVERに自動でデプロイします。
+# 処理概要
+# フロント画面を更新した際に下記の処理を行う
+# １．ビルド実行
+# ２．静的HTMLファイル出力
+# ３．XSERVERにデプロイ
 
 on:
   push:
@@ -24,23 +28,27 @@ jobs:
       - name: Install NPM packages
         run: npm ci
 
-      - name: Build Next.js app
+      - name: １．ビルド実行
         run: npm run build
         env:
           MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY }}
           NEXT_PUBLIC_MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY }}
           MICROCMS_SERVICE_ID: ${{ secrets.MICROCMS_SERVICE_ID }}
           ALGOLIA_ADMIN_API_KEY: ${{ secrets.ALGOLIA_ADMIN_API_KEY }}
+          NEXT_PUBLIC_GOOGLE_ANALYTICS_ID: G-CR3C5Q941B
+          BASE_PATH: /paths-are-tech-blog-template
 
-      - name: Output static html files
+      - name: ２．静的HTMLファイル出力
         run: npm run export
         env:
           MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY }}
           NEXT_PUBLIC_MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY }}
           MICROCMS_SERVICE_ID: ${{ secrets.MICROCMS_SERVICE_ID }}
           ALGOLIA_ADMIN_API_KEY: ${{ secrets.ALGOLIA_ADMIN_API_KEY }}
+          NEXT_PUBLIC_GOOGLE_ANALYTICS_ID: G-CR3C5Q941B
+          BASE_PATH: /paths-are-tech-blog-template
 
-      - name: FTP-Deploy-Action
+      - name: ３．XSERVERにデプロイ
         uses: SamKirkland/FTP-Deploy-Action@2.0.0
         env:
           FTP_SERVER: ${{ secrets.XSERVER_HOST_NAME }}
