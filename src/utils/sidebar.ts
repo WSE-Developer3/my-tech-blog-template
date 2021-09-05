@@ -27,7 +27,7 @@ export const sidebar = {
     {
       name: "Instagram",
       icon: InstagramIcon,
-      url: "https://www.instagram.com/paths_are_web",
+      url: "https://www.instagram.com/paths_are",
     },
     {
       name: "Github",
