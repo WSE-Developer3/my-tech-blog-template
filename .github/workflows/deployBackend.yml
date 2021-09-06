@@ -39,7 +39,7 @@ jobs:
           MICROCMS_SERVICE_ID: ${{ secrets.MICROCMS_SERVICE_ID }}
           ALGOLIA_ADMIN_API_KEY: ${{ secrets.ALGOLIA_ADMIN_API_KEY }}
           NEXT_PUBLIC_GOOGLE_ANALYTICS_ID: G-CR3C5Q941B
-          BASE_PATH: /paths-are-tech-blog-template
+          # BASE_PATH: /paths-are-tech-blog-template
 
       - name: ３．静的HTMLファイル出力
         run: npm run export
@@ -49,7 +49,7 @@ jobs:
           MICROCMS_SERVICE_ID: ${{ secrets.MICROCMS_SERVICE_ID }}
           ALGOLIA_ADMIN_API_KEY: ${{ secrets.ALGOLIA_ADMIN_API_KEY }}
           NEXT_PUBLIC_GOOGLE_ANALYTICS_ID: G-CR3C5Q941B
-          BASE_PATH: /paths-are-tech-blog-template
+          # BASE_PATH: /paths-are-tech-blog-template
 
       - name: ４．XSERVERにデプロイ
         uses: SamKirkland/FTP-Deploy-Action@2.0.0
