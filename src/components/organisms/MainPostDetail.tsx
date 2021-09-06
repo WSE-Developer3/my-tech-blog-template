@@ -2,7 +2,7 @@ import React, { createContext, useState } from "react";
 import { Grid, Box, Typography, Divider } from "@mui/material";
 import Markdown from "../Markdown";
 import ShareButtons from "../ShareButtons";
-import Image from "next/image";
+// import Image from "next/image";
 
 export interface postObject {
   id: string;
@@ -65,12 +65,13 @@ export default function MainPostDetail(props: MainPostDetailProps) {
           }}
         >
           <Box sx={{ mb: 1 }}>
-            <Image
+            <img
               src={post.featuredImage.url}
-              layout="responsive"
               alt="アイキャッチ画像"
-              height={640}
-              width={1200}
+              width="100%"
+              // layout="responsive"
+              // height={640}
+              // width={1200}
             />
           </Box>
           <Typography variant="h6" gutterBottom>
