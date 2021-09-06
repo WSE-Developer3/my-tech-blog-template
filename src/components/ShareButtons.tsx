@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Stack } from "@mui/material";
 import {
   FacebookShareButton,
@@ -14,13 +14,14 @@ import {
   PocketIcon,
   TwitterIcon,
 } from "react-share";
-import { useRouter } from "next/router";
 
-const ShareButtons = ({ title, url }: { title: string; url: string }) => {
-  const router = useRouter();
-  console.log(router);
-  // c
-  // const url = "";
+const ShareButtons = ({ title }: { title: string }) => {
+  const [href, setHref] = useState("https://blog.paths-are.com");
+
+  useEffect(() => {
+    setHref(window.location.href);
+  }, []);
+
   return (
     <Stack
       direction="row"
@@ -36,19 +37,19 @@ const ShareButtons = ({ title, url }: { title: string; url: string }) => {
         },
       }}
     >
-      <TwitterShareButton title={title} url={url}>
+      <TwitterShareButton title={title} url={href}>
         <TwitterIcon size={48} round={true} />
       </TwitterShareButton>
-      <FacebookShareButton title={title} url={url}>
+      <FacebookShareButton title={title} url={href}>
         <FacebookIcon size={48} round={true} />
       </FacebookShareButton>
-      <HatenaShareButton title={title} url={url}>
+      <HatenaShareButton title={title} url={href}>
         <HatenaIcon size={48} round={true} />
       </HatenaShareButton>
-      <LineShareButton title={title} url={url}>
+      <LineShareButton title={title} url={href}>
         <LineIcon size={48} round={true} />
       </LineShareButton>
-      <PocketShareButton title={title} url={url}>
+      <PocketShareButton title={title} url={href}>
         <PocketIcon size={48} round={true} />
       </PocketShareButton>
     </Stack>

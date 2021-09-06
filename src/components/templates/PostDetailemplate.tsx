@@ -18,7 +18,7 @@ export default function PostDetailemplate({
     <Template tagList={tagList}>
       <CommonMeta
         title={post.title}
-        url={`https://works.paths-are.com/paths-are-tech-blog-template/post/${post.id}`}
+        // url={`https://works.paths-are.com/paths-are-tech-blog-template/post/${post.id}`}
         description={post.title}
         imgUrl={imgUrl}
       />
