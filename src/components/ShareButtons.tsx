@@ -14,8 +14,13 @@ import {
   PocketIcon,
   TwitterIcon,
 } from "react-share";
+import { useRouter } from "next/router";
 
 const ShareButtons = ({ title, url }: { title: string; url: string }) => {
+  const router = useRouter();
+  console.log(router);
+  // c
+  // const url = "";
   return (
     <Stack
       direction="row"

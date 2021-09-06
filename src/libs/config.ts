@@ -20,5 +20,7 @@ export function url(filename: string): string {
   const { publicRuntimeConfig } = getConfig() as {
     publicRuntimeConfig: { urlPrefix: string };
   };
-  return publicRuntimeConfig.urlPrefix + filename;
+  return publicRuntimeConfig.urlPrefix
+    ? publicRuntimeConfig.urlPrefix + filename
+    : filename;
 }
