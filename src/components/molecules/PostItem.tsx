@@ -35,7 +35,7 @@ export default function PostItem(props: PostItemProps) {
       >
         <Card
           sx={{
-            display: { xs: "blox", md: "flex" },
+            display: { xs: "blox", sm: "flex" },
             minHeight: 136,
             position: "relative",
           }}

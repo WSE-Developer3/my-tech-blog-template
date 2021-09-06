@@ -59,7 +59,7 @@ export default function MainPostDetail(props: MainPostDetailProps) {
         <Box
           sx={{
             p: 2,
-            mr: { xs: 0, md: 2 },
+            mr: { xs: 0, sm: 2 },
             backgroundColor: "#ebf5fb",
             boxShadow: 2,
           }}

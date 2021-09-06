@@ -36,7 +36,7 @@ export default function FeaturedPost(props: FeaturedPostProps) {
       >
         <Card
           sx={{
-            display: { xs: "blox", md: "flex" },
+            display: { xs: "blox", sm: "flex" },
             minHeight: 160,
           }}
         >
@@ -57,7 +57,6 @@ export default function FeaturedPost(props: FeaturedPostProps) {
               {dateFormat(post.date)}
             </Typography>
             <Typography variant="subtitle1" paragraph>
-              {/* {post.description.substring(0, 30)} */}
               {post.description}
             </Typography>
             <Typography variant="subtitle1" color="primary"></Typography>

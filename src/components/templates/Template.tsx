@@ -35,14 +35,7 @@ export default function Template(props: any) {
                 ))}
               </Grid>
             ) : null}
-            <Grid
-              container
-              /* spacing={5} */ sx={
-                {
-                  /* mt: 3 */
-                }
-              }
-            >
+            <Grid container mt={2}>
               {props.children}
               <Sidebar
                 title={sidebar.title}

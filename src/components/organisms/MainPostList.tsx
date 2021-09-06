@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Grid, Typography, Divider } from "@mui/material";
+import { Grid, Box, Typography, Divider } from "@mui/material";
 import PostItem from "../molecules/PostItem";
 import { PostItemProps } from "../molecules/PostItem";
 
@@ -14,20 +14,29 @@ export default function MainPostList(props: MainPostListProps) {
 
   return (
     <Grid item xs={12} md={8}>
-      <Typography variant="h6" gutterBottom>
-        {tag && "[" + tag + "]に関する"}
-        {title}
-      </Typography>
-      <Divider
+      <Box
         sx={{
-          mb: 2,
+          p: 2,
+          mr: { xs: 0, sm: 0, md: 2 },
+          backgroundColor: "#ebf5fb",
+          boxShadow: 2,
         }}
-      />
-      <Grid container spacing={4}>
-        {posts.map((post: any) => (
-          <PostItem key={post.title} post={post} />
-        ))}
-      </Grid>
+      >
+        <Typography variant="h6" gutterBottom>
+          {tag && "[" + tag + "]に関する"}
+          {title}
+        </Typography>
+        <Divider
+          sx={{
+            mb: 2,
+          }}
+        />
+        <Grid container spacing={4}>
+          {posts.map((post: any) => (
+            <PostItem key={post.title} post={post} />
+          ))}
+        </Grid>
+      </Box>
     </Grid>
   );
 }
