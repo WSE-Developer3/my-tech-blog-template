@@ -41,7 +41,7 @@ export default function CodeHighlighter(props: any) {
     </React.Fragment>
   );
 
-  let language = "javascript"; // 指定がなかった時のデフォルト値
+  let language = "javascript"; // デフォルト値
   let fileName: string = "";
   if (className) {
     const suffix = "lang-";

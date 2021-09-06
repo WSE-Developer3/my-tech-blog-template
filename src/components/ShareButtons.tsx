@@ -20,10 +20,15 @@ const ShareButtons = ({ title, url }: { title: string; url: string }) => {
     <Stack
       direction="row"
       spacing={2}
-      justifyContent="center"
+      // justifyContent="left"
       alignItems="center"
       sx={{
         my: 1,
+        overflow: "auto",
+        justifyContent: {
+          xs: "left",
+          sm: "center",
+        },
       }}
     >
       <TwitterShareButton title={title} url={url}>

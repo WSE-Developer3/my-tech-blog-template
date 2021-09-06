@@ -38,7 +38,7 @@ export default function Header(props: HeaderProps) {
       <Toolbar
         component="nav"
         variant="dense"
-        sx={{ justifyContent: "left", overflowX: "auto", mb: 1 }}
+        sx={{ justifyContent: "left", overflowX: "auto", my: 1 }}
       >
         <Stack direction="row" spacing="1">
           {sections.map((section) => (

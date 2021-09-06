@@ -7,6 +7,24 @@ function MarkdownListItem(props: any) {
   return <Box component="li" sx={{ mt: 1, typography: "body1" }} {...props} />;
 }
 
+// const PreBlock = ({ children, ...rest }: any) => {
+//   if ("type" in children && children["type"] === "code") {
+//     return CodeHighlighter(children["props"]);
+//   }
+//   return <pre {...rest}>{children}</pre>;
+// };
+
+const CodeBlock = (props: any) => {
+  if (props.className !== undefined) {
+    return CodeHighlighter(props);
+  }
+  return (
+    <code style={{ padding: "2px 4px", backgroundColor: "#FFF" }}>
+      {props.children}
+    </code>
+  );
+};
+
 const options = {
   overrides: {
     h1: {
@@ -41,7 +59,7 @@ const options = {
     li: {
       component: MarkdownListItem,
     },
-    code: CodeHighlighter,
+    code: CodeBlock,
   },
 };
 

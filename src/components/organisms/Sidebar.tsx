@@ -18,22 +18,20 @@ export default function Sidebar(props: SidebarProps) {
   const { /* archives, */ description, social, title } = props;
 
   return (
-    <Grid item xs={12} md={4}>
+    <Grid item xs={12} md={4} sx={{ mt: { xs: 3, md: 0 } }}>
       <MySearchBox />
       <Paper
         elevation={0}
         sx={{ p: 2, bgcolor: "grey.200", backgroundColor: "#ebf5fb" }}
       >
         <Grid container sx={{ display: "flex", alignItems: "center", mb: 1 }}>
-          <Grid xs={8}>
+          <Grid item xs={8}>
             <Typography variant="h6" gutterBottom fontWeight="bold">
               {title}{" "}
             </Typography>
           </Grid>
-          <Grid xs={4} sx={{ display: "flex", justifyContent: "center" }}>
-            {/* <Avatar alt="アイコン" sx={{ width: 56, height: 56, boxShadow: 1 }}> */}
+          <Grid item xs={4} sx={{ display: "flex", justifyContent: "center" }}>
             <InsertEmoticonIcon fontSize="large" sx={{ color: "#556cd6" }} />
-            {/* </Avatar> */}
           </Grid>
         </Grid>
 

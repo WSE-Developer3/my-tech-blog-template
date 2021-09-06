@@ -31,6 +31,14 @@ module.exports = {
   basePath: process.env.BASE_PATH,
   assetPrefix: process.env.BASE_PATH,
   publicRuntimeConfig: { urlPrefix: process.env.BASE_PATH }, // 画像読み込みに使う。参考：https://maku.blog/p/xjjbwes/
+
+  /**
+   * 別ドメインにある画像を使う場合の設定
+   */
+  images: {
+    domains: ["images.microcms-assets.io"],
+  },
+
   /**
    * algolia
    * https://www.algolia.com/doc/guides/building-search-ui/widgets/customize-an-existing-widget/react/#style-your-widgets

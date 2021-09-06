@@ -35,7 +35,14 @@ export default function Template(props: any) {
                 ))}
               </Grid>
             ) : null}
-            <Grid container spacing={5} sx={{ mt: 3 }}>
+            <Grid
+              container
+              /* spacing={5} */ sx={
+                {
+                  /* mt: 3 */
+                }
+              }
+            >
               {props.children}
               <Sidebar
                 title={sidebar.title}
@@ -48,7 +55,7 @@ export default function Template(props: any) {
         </Container>
         <Footer
           title="パスアの開発記録"
-          description="～に関する情報を発信しています。"
+          description="ReactとNext.jsに特化して情報を発信していきます。"
         />
       </div>
     </React.Fragment>
