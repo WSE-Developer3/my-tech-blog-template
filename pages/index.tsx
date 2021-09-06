@@ -53,15 +53,14 @@ export const getStaticProps = async () => {
   /** 記事一覧 */
   const fetchedPosts: any = await client.get({ endpoint: "post" });
 
-  /** カテゴリー一覧 */
+  /** タグ一覧 */
   const responseTagList: any = await client.get({
     endpoint: "tag",
-    queries: { fields: "id,tag" },
+    // queries: { fields: "id,tag" },
   });
   const tagList = responseTagList.contents.map((content: any) => {
     return { url: [content.id], title: content.tag };
   });
-  // console.log(responsetagList);
 
   return {
     props: {
