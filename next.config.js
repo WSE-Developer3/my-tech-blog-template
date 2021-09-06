@@ -28,11 +28,11 @@ module.exports = {
    * https:my-domain-name.com/ → ×
    * https:my-domain-name.com/jamstackblog-with-next-muiv5-microcms → 〇
    */
-  basePath: process.env.BASE_PATH ? process.env.BASE_PATH : null,
-  assetPrefix: process.env.BASE_PATH ? process.env.BASE_PATH : null,
-  publicRuntimeConfig: {
-    urlPrefix: process.env.BASE_PATH ? process.env.BASE_PATH : null,
-  }, // 画像読み込みに使う。参考：https://maku.blog/p/xjjbwes/
+  // basePath: process.env.BASE_PATH ? process.env.BASE_PATH : null,
+  // assetPrefix: process.env.BASE_PATH ? process.env.BASE_PATH : null,
+  // publicRuntimeConfig: {
+  //   urlPrefix: process.env.BASE_PATH ? process.env.BASE_PATH : null,
+  // }, // 画像読み込みに使う。参考：https://maku.blog/p/xjjbwes/
 
   /**
    * 別ドメインにある画像を使う場合の設定

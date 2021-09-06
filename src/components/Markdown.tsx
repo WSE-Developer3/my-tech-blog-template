@@ -19,9 +19,51 @@ const CodeBlock = (props: any) => {
     return CodeHighlighter(props);
   }
   return (
-    <code style={{ padding: "2px 4px", backgroundColor: "#FFF" }}>
+    <code
+      style={{
+        margin: "0 2px",
+        padding: "2px 4px",
+        backgroundColor: "#e2d7d7",
+        color: "#632424de",
+      }}
+    >
       {props.children}
     </code>
+  );
+};
+
+const Hedding2 = (props: any) => {
+  return (
+    <Typography
+      variant="h6"
+      component="h2"
+      gutterBottom
+      sx={{
+        borderLeft: "4px solid #e86161",
+        pl: 1,
+        mt: 3,
+        mb: 2,
+      }}
+    >
+      {props.children}
+    </Typography>
+  );
+};
+const Hedding3 = (props: any) => {
+  return (
+    <Typography
+      variant="subtitle1"
+      component="h2"
+      gutterBottom
+      sx={{
+        borderLeft: "4px solid #e86161",
+        pl: 1,
+        mt: 3,
+        mb: 2,
+      }}
+    >
+      {props.children}
+    </Typography>
   );
 };
 
@@ -36,12 +78,12 @@ const options = {
       },
     },
     h2: {
-      component: Typography,
-      props: { gutterBottom: true, variant: "h6", component: "h2" },
+      component: Hedding2,
+      // props: { gutterBottom: true, variant: "h6", component: "h2" },
     },
     h3: {
-      component: Typography,
-      props: { gutterBottom: true, variant: "subtitle1" },
+      component: Hedding3,
+      // props: { gutterBottom: true, variant: "subtitle1" },
     },
     h4: {
       component: Typography,
