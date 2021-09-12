@@ -57,7 +57,7 @@ export default function PostItem(props: PostItemProps) {
               {post.title}
             </Typography>
             <Typography variant="subtitle1" color="text.secondary">
-              {dateFormat(post.date)}
+              {dateFormat(post.publishedAt)}
             </Typography>
             <Typography variant="subtitle1" paragraph>
               {post.description}

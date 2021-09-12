@@ -60,7 +60,7 @@ export default function MainPostDetail(props: MainPostDetailProps) {
           sx={{
             p: 2,
             mr: { xs: 0, sm: 2 },
-            backgroundColor: "#ebf5fb",
+            backgroundColor: "#fff",
             boxShadow: 2,
           }}
         >
