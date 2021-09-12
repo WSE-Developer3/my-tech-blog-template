@@ -30,8 +30,8 @@ export default function CodeHighlighter(props: any) {
         <Box
           sx={{
             position: "absolute",
-            left: 10,
-            top: -18,
+            left: "10px",
+            top: "-18px",
             zIndex: 1,
             color: codeStyle === "dark" ? "#FFF" : "#000",
             backgroundColor: codeStyle === "dark" ? "rgb(60, 60, 60)" : "#FFF",
@@ -154,7 +154,7 @@ export default function CodeHighlighter(props: any) {
           <Box
             sx={{
               position: "relative",
-              marginTop: fileName.length > 0 ? 28 : 0,
+              marginTop: fileName.length > 0 ? "28px" : 0,
               boxShadow:
                 codeStyle === "dark"
                   ? "0px 0px 0px -0px rgb(0 0 0 / 0%)"
@@ -165,8 +165,6 @@ export default function CodeHighlighter(props: any) {
                 },
                 ":hover": {
                   ".tool-tip-wrapper": {
-                    // how to add !import in typescript
-                    // https://stackoverflow.com/questions/53151340/material-ui-and-typescript-how-to-use-important
                     visibility: "visible!important" as "visible",
                     // or
                     // visibility: "visible!important" as any,
