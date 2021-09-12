@@ -22,7 +22,12 @@ export default function Sidebar(props: SidebarProps) {
       <MySearchBox />
       <Paper
         elevation={0}
-        sx={{ p: 2, bgcolor: "grey.200", backgroundColor: "#ebf5fb" }}
+        sx={{
+          p: 2,
+          bgcolor: "grey.200",
+          backgroundColor: "#fff",
+          boxShadow: 1,
+        }}
       >
         <Grid container sx={{ display: "flex", alignItems: "center", mb: 1 }}>
           <Grid item xs={8}>

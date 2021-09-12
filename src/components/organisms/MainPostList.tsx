@@ -18,7 +18,9 @@ export default function MainPostList(props: MainPostListProps) {
         sx={{
           p: 2,
           mr: { xs: 0, sm: 0, md: 2 },
-          backgroundColor: "#ebf5fb",
+          // backgroundColor: "#ebf5fb",
+          backgroundColor: "#fff",
+          borderRadius: "4px",
           boxShadow: 2,
         }}
       >

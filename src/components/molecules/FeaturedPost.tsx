@@ -37,7 +37,7 @@ export default function FeaturedPost(props: FeaturedPostProps) {
         <Card
           sx={{
             display: { xs: "blox", sm: "flex" },
-            minHeight: 160,
+            height: 180,
           }}
         >
           <CardMedia

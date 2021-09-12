@@ -3,8 +3,9 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import GitHubIcon from "@mui/icons-material/GitHub";
 
 export const sidebar = {
-  title: "このブログの制作者",
-  description: `フロント画面の開発が大好きなフリーのデベロッパーです。好きな言語はReactとNext.js。TypeScriptとNode.jsもできます。`,
+  title: "管理人について",
+  // description: `フロント画面の開発が大好きなフリーのデベロッパーです。好きな言語はReactとNext.js。TypeScriptとNode.jsもできます。`,
+  description: `React、Next.js、TypeScriptを愛用しています。このブログはNext.js、microCMSで作成されています。まずは、個人ブログ用のテンプレートを作成し、その後、プログラミング系のメディアを作っていく予定です。`,
   // archives: [
   //   { title: "March 2020", url: "#" },
   //   { title: "February 2020", url: "#" },

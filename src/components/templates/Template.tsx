@@ -1,14 +1,53 @@
 import * as React from "react";
-import { Container, Grid, CssBaseline } from "@mui/material";
+import {
+  Box,
+  Container,
+  Typography,
+  Grid,
+  CssBaseline,
+  Link as MuiLink,
+} from "@mui/material";
 import Header from "../organisms/Header";
-import MainFeaturedPost from "../molecules/MainFeaturedPost";
-import FeaturedPost from "../molecules/FeaturedPost";
+// import MainFeaturedPost from "../molecules/MainFeaturedPost";
+// import FeaturedPost from "../molecules/FeaturedPost";
 import Sidebar from "../organisms/Sidebar";
 import Footer from "../organisms/Footer";
 import { sidebar } from "../../utils/sidebar";
+import NextLink from "next/link";
+
+function Top() {
+  return (
+    <Box
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <img src={"/imgs/blog-top/2.png"} alt="アイキャッチ画像" width="100%" />
+      <Typography
+        component="h2"
+        variant="h5"
+        align="center"
+        noWrap
+        sx={{ position: "absolute", color: "#FFF" }}
+      >
+        <NextLink href="/" passHref>
+          <MuiLink underline="hover" sx={{ color: "#FFF" }}>
+            パスアの開発ブログ
+          </MuiLink>
+        </NextLink>
+      </Typography>
+    </Box>
+  );
+}
 
 export default function Template(props: any) {
-  const { mainFeaturedPost, featuredPosts, tagList } = props;
+  const {
+    //  mainFeaturedPost,
+    // featuredPosts,
+    tagList,
+  } = props;
 
   return (
     <React.Fragment>
@@ -20,21 +59,23 @@ export default function Template(props: any) {
           position: "relative",
           paddingBottom: "213px" /* ←フッターの高さを指定*/,
           boxSizing: "border-box",
+          backgroundColor: "#f3f4f6",
         }}
       >
+        <Top />
         <Container maxWidth="lg">
           <Header title="パスアの開発ブログ" sections={tagList} />
           <main>
-            {mainFeaturedPost !== undefined && mainFeaturedPost !== null ? (
+            {/* { mainFeaturedPost !== null ? (
               <MainFeaturedPost post={mainFeaturedPost} />
-            ) : null}
-            {featuredPosts !== undefined && mainFeaturedPost !== null ? (
+            ) : null} */}
+            {/* {featuredPosts !== undefined ? (
               <Grid container spacing={4}>
                 {featuredPosts.map((post: any) => (
                   <FeaturedPost key={post.title} post={post} />
                 ))}
               </Grid>
-            ) : null}
+            ) : null} */}
             <Grid container mt={2}>
               {props.children}
               <Sidebar

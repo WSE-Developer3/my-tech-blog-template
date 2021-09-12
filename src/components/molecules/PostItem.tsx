@@ -8,6 +8,7 @@ import {
   CardMedia,
 } from "@mui/material";
 import { useRouter } from "next/router";
+import { dateFormat } from "../../libs/dateFormat";
 
 export interface PostItemProps {
   post: {
@@ -18,6 +19,7 @@ export interface PostItemProps {
     imageLabel: string;
     title: string;
     id: string;
+    publishedAt: string;
   };
 }
 
@@ -55,7 +57,7 @@ export default function PostItem(props: PostItemProps) {
               {post.title}
             </Typography>
             <Typography variant="subtitle1" color="text.secondary">
-              {post.date}
+              {dateFormat(post.date)}
             </Typography>
             <Typography variant="subtitle1" paragraph>
               {post.description}

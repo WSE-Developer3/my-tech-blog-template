@@ -1,7 +1,7 @@
 import * as React from "react";
 import {
   Toolbar,
-  Typography,
+  // Typography,
   Link as MuiLink,
   Chip,
   Stack,
@@ -17,11 +17,14 @@ interface HeaderProps {
 }
 
 export default function Header(props: HeaderProps) {
-  const { sections, title } = props;
+  const {
+    sections,
+    // title
+  } = props;
 
   return (
     <React.Fragment>
-      <Toolbar sx={{ borderBottom: 1, borderColor: "divider" }}>
+      {/* <Toolbar sx={{ borderBottom: 1, borderColor: "divider" }}>
         <Typography
           component="h2"
           variant="h5"
@@ -34,7 +37,7 @@ export default function Header(props: HeaderProps) {
             <MuiLink underline="hover">{title}</MuiLink>
           </NextLink>
         </Typography>
-      </Toolbar>
+      </Toolbar> */}
       <Toolbar
         component="nav"
         variant="dense"
