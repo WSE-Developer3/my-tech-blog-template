@@ -25,7 +25,7 @@ export default function MainPostList(props: MainPostListProps) {
         }}
       >
         <Typography variant="h6" gutterBottom>
-          {tag && "[" + tag + "]に関する"}
+          {tag && `${tag}に関する`}
           {title}
         </Typography>
         <Divider

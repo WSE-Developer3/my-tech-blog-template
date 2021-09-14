@@ -3,7 +3,8 @@ mui の差し替えを行ってね！
 # Next.js と microCMS で作る Jamstack な技術ブログのテンプレート
 
 microCMS と Next.js を使い Jamstack なブログを作成するためのフロントエンドのソースコードになります。  
-バックエンドは microCMS でご自身で構築さい。 [構築参考 URL](https://paths-are.com/archives/1961)
+バックエンドは microCMS でご自身で構築さい。  
+[構築参考 URL](https://paths-are.com/archives/1961)
 Algolia の設定も必要になります。
 
 ## 実装内容
@@ -33,7 +34,7 @@ Algolia の設定も必要になります。
   - コピーボタンの設置
   - ダークモード ON・OFF 機能
 
-- 記事のシェアボタンの設置（今後）
+- 記事のシェアボタンの設置（済）
 - プレビュー画面の設置（2021/9/1 済）
 - Google Analitics 設置（2021/9/2 済）
 - 広告の設置？（今後）
@@ -41,7 +42,7 @@ Algolia の設定も必要になります。
 - カードにタグを表示　 → 　微妙だからなし。（2021/9/2 済）
 - 記事が良かったどうかのフィードバックボタン（今後）
 - microCMS 記事更新時に Algolia のインデックスを更新・再ビルドしてサーバーに自動デプロイ（2021/9/1 済）
-- OGP 設定
+- OGP 設定（Twitter は済）
 - ローカルでの記事投稿と microCMS/contentful どちらが良いか検証
 
 ## 完成サイト
@@ -70,9 +71,14 @@ cp .env.sample .env
 .env ファイルに次の環境変数を設定してください。
 
 ```.env
+API_KEY=<microCMSのAPIキー>
+SERVICE_ID=<microCMSのサービスID>
+NEXT_PUBLIC_MICROCMS_API_KEY=<microCMSのAPIキー> static html にする場合は必要
 MICROCMS_API_KEY=<microCMSのAPIキー>
 MICROCMS_SERVICE_ID=<microCMSのサービスID>
-ALGOLIA_ADMIN_API_KEY=<ALGOLIAの管理キー>
+ALGOLIA_ADMIN_API_KEY=<Algoliaのキー>
+NEXT_PUBLIC_GOOGLE_ANALYTICS_ID=<GoogleAnalyticsのID>
+__BASE_PATH=<サブフォルダ、必要なら。__は省く。>
 ```
 
 ```ローカル環境構築

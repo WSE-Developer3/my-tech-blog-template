@@ -20,10 +20,15 @@ export const getStaticPaths = async () => {
 // カテゴリーに紐づいている記事一覧を取得し、テンプレートへ受け渡す
 export const getStaticProps = async (context: any) => {
   const tag = context.params.tagId;
+  const tagNameContents: any = await client.get({
+    endpoint: "tag",
+    queries: { filters: `id[equals]${tag}` },
+  });
+  const tagName = tagNameContents.contents[0].tag;
 
   const postsFilteredByTag: any = await client.get({
     endpoint: "post",
-    queries: { filters: `tag[contains]${tag}` },
+    queries: { filters: `tags[contains]${tag}` },
   });
 
   /** カテゴリー一覧 */
@@ -38,7 +43,7 @@ export const getStaticProps = async (context: any) => {
   return {
     props: {
       posts: postsFilteredByTag.contents,
-      tag: tag,
+      tag: tagName,
       tagList: tagList,
     },
   };
