@@ -7,6 +7,14 @@ microCMS と Next.js を使い Jamstack なブログを作成するためのフ�
 [構築参考 URL](https://paths-are.com/archives/1961)
 Algolia の設定も必要になります。
 
+## 完成サイト
+
+[サンプル - Sample](https://blog.paths-are.com/)
+
+## 完成イメージ
+
+![image](https://user-images.githubusercontent.com/70325458/131208090-2aff9b74-32f2-4669-9a74-52bd2d727448.png)
+
 ## 実装内容
 
 ページ
@@ -44,14 +52,6 @@ Algolia の設定も必要になります。
 - microCMS 記事更新時に Algolia のインデックスを更新・再ビルドしてサーバーに自動デプロイ（2021/9/1 済）
 - OGP 設定（Twitter は済）
 - ローカルでの記事投稿と microCMS/contentful どちらが良いか検証
-
-## 完成サイト
-
-[サンプル - Sample](https://works.paths-are.com/paths-are-tech-blog-template/)
-
-## 完成イメージ
-
-![image](https://user-images.githubusercontent.com/70325458/131208090-2aff9b74-32f2-4669-9a74-52bd2d727448.png)
 
 ## 技術スタック
 
