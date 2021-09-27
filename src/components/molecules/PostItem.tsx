@@ -34,10 +34,20 @@ export default function PostItem(props: PostItemProps) {
         onClick={() => {
           router.push(`/post/${post.id}`);
         }}
+        sx={{
+          "& ": {
+            ":hover .MuiPaper-root": {
+              boxShadow: 4,
+            },
+          },
+        }}
       >
         <Card
           sx={{
-            display: { xs: "blox", sm: "flex" },
+            display: {
+              xs: "blox",
+              sm: "flex",
+            },
             minHeight: 136,
             position: "relative",
           }}
@@ -47,7 +57,6 @@ export default function PostItem(props: PostItemProps) {
             sx={{
               width: "100%",
               display: { xs: "block", sm: "none" },
-              // objectFit: "cover",
             }}
             image={post.featuredImage.url}
             alt={post.imageLabel}

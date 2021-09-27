@@ -22,9 +22,15 @@ function Top() {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        // minHeight: 200,
       }}
     >
-      <img src={"/imgs/blog-top/2.png"} alt="アイキャッチ画像" width="100%" />
+      <img
+        src={"/imgs/blog-top/2.png"}
+        alt="アイキャッチ画像"
+        width="100%"
+        style={{ minHeight: "200px", objectFit: "cover" }}
+      />
       <Typography
         component="h2"
         variant="h5"
