@@ -35,7 +35,7 @@ jobs:
           NEXT_PUBLIC_MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY }}
           MICROCMS_SERVICE_ID: ${{ secrets.MICROCMS_SERVICE_ID }}
           ALGOLIA_ADMIN_API_KEY: ${{ secrets.ALGOLIA_ADMIN_API_KEY }}
-          NEXT_PUBLIC_GOOGLE_ANALYTICS_ID: G-8KX92NNQLS
+          NEXT_PUBLIC_GOOGLE_ANALYTICS_ID: G-DBF9E4CPGP
           # BASE_PATH: /paths-are-tech-blog-template
 
       - name: ２．静的HTMLファイル出力
@@ -45,7 +45,7 @@ jobs:
           NEXT_PUBLIC_MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY }}
           MICROCMS_SERVICE_ID: ${{ secrets.MICROCMS_SERVICE_ID }}
           ALGOLIA_ADMIN_API_KEY: ${{ secrets.ALGOLIA_ADMIN_API_KEY }}
-          NEXT_PUBLIC_GOOGLE_ANALYTICS_ID: G-8KX92NNQLS
+          NEXT_PUBLIC_GOOGLE_ANALYTICS_ID: G-DBF9E4CPGP
           # BASE_PATH: /paths-are-tech-blog-template
 
       - name: ３．XSERVERにデプロイ
