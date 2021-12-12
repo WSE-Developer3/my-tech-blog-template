@@ -1,4 +1,4 @@
-name: microCMS管理画面で記事更新時のXSERVERへの自動デプロイ
+name: microCMS管理画面で記事更新時のalgolia処理とビルド処理
 # 処理概要
 # 記事を公開した際に下記の処理を行う
 # １．最新の記事一覧をalgoliaのインデックスに登録
