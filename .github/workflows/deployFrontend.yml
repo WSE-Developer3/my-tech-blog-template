@@ -1,4 +1,5 @@
-name: フロント画面更新時のXSERVERへの自動デプロイ
+name: フロント画面更新時のびづどしょり
+# name: フロント画面更新時のXSERVERへの自動デプロイ
 # 処理概要
 # フロント画面を更新した際に下記の処理を行う
 # １．ビルド実行
@@ -36,7 +37,7 @@ jobs:
           MICROCMS_SERVICE_ID: ${{ secrets.MICROCMS_SERVICE_ID }}
           ALGOLIA_ADMIN_API_KEY: ${{ secrets.ALGOLIA_ADMIN_API_KEY }}
           NEXT_PUBLIC_GOOGLE_ANALYTICS_ID: G-DBF9E4CPGP
-          # BASE_PATH: /paths-are-tech-blog-template
+#           BASE_PATH: /paths-are-tech-blog-template
 
 #       - name: ２．静的HTMLファイル出力
 #         run: npm run export
