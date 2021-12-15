@@ -62,6 +62,7 @@ export default function MainPostDetail(props: MainPostDetailProps) {
             mr: { xs: 0, sm: 2 },
             backgroundColor: "#fff",
             boxShadow: 2,
+            overflowWrap: "break-word",
           }}
         >
           <Box sx={{ mb: 1 }}>
