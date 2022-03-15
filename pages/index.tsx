@@ -51,7 +51,10 @@ export const getStaticProps = async () => {
   }
 
   /** 記事一覧 */
-  const fetchedPosts: any = await client.get({ endpoint: "post" });
+  const fetchedPosts: any = await client.get({
+    endpoint: "post",
+    queries: { limit: 100 },
+  });
 
   /** タグ一覧 */
   const responseTagList: any = await client.get({

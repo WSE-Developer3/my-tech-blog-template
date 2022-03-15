@@ -2,6 +2,7 @@ import * as React from "react";
 import { Grid, Box, Typography, Divider } from "@mui/material";
 import PostItem from "../molecules/PostItem";
 import { PostItemProps } from "../molecules/PostItem";
+// import Pagination from "./Pagination";
 
 interface MainPostListProps {
   posts: ReadonlyArray<PostItemProps>;
@@ -18,7 +19,6 @@ export default function MainPostList(props: MainPostListProps) {
         sx={{
           p: 2,
           mr: { xs: 0, sm: 0, md: 2 },
-          // backgroundColor: "#ebf5fb",
           backgroundColor: "#fff",
           borderRadius: "4px",
           boxShadow: 2,
@@ -38,6 +38,7 @@ export default function MainPostList(props: MainPostListProps) {
             <PostItem key={post.title} post={post} />
           ))}
         </Grid>
+        {/* <Pagination /> */}
       </Box>
     </Grid>
   );

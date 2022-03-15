@@ -14,6 +14,7 @@ import Sidebar from "../organisms/Sidebar";
 import Footer from "../organisms/Footer";
 import { sidebar } from "../../utils/sidebar";
 import NextLink from "next/link";
+// import Pagination from "../organisms/Pagination";
 
 function Top() {
   return (
@@ -72,16 +73,6 @@ export default function Template(props: any) {
         <Container maxWidth="lg">
           <Header title="パスアの開発ブログ" sections={tagList} />
           <main>
-            {/* { mainFeaturedPost !== null ? (
-              <MainFeaturedPost post={mainFeaturedPost} />
-            ) : null} */}
-            {/* {featuredPosts !== undefined ? (
-              <Grid container spacing={4}>
-                {featuredPosts.map((post: any) => (
-                  <FeaturedPost key={post.title} post={post} />
-                ))}
-              </Grid>
-            ) : null} */}
             <Grid container mt={2}>
               {props.children}
               <Sidebar
@@ -91,6 +82,7 @@ export default function Template(props: any) {
                 social={sidebar.social}
               />
             </Grid>
+            {/* <Pagination /> */}
           </main>
         </Container>
         <Footer

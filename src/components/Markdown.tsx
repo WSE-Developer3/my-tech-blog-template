@@ -23,8 +23,8 @@ const CodeBlock = (props: any) => {
       style={{
         margin: "0 2px",
         padding: "2px 4px",
-        backgroundColor: "#ebeff9",
-        color: "##4a4242de",
+        backgroundColor: "#f6f6f6",
+        color: "#4a4242de",
         fontWeight: "bold",
         borderRadius: "2px",
       }}

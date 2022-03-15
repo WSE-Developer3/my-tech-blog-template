@@ -9,7 +9,10 @@ export default function PostDetailPage({ post, tagList }: any) {
  * 静的生成のためのパスを作成
  */
 export const getStaticPaths = async () => {
-  const postList: any = await client.get({ endpoint: "post" });
+  const postList: any = await client.get({
+    endpoint: "post",
+    queries: { limit: 100 },
+  });
 
   let paths = [];
   for (let content of postList.contents) {
